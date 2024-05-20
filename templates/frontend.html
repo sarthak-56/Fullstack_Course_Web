@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/app1/image/frontend.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: red;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            backdrop-filter: blur(10px);
+            padding: 4vw;
+            font-weight: bolder;
+            text-align: center;
+            border-radius: 10px;
+            max-height: 70vh;
+            overflow-y: auto;
+            color: red;
+        }
+
+        h3 {
+            color: red;
+        }
+
+        .navbar {
+          background-color: rgba(0, 0, 139, 0.7); /* Semi-transparent blue */
+        }
+
+        /* Media query for responsiveness */
+        @media screen and (max-width: 480px) {
+            .content {
+                padding: 6vw;
+                max-height: none;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-item {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger rounded mb-4 w-100">
+        <div class="container">
+            <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'react' %}">React</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'angular' %}">Angular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'next' %}">Next</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'html' %}">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'vue' %}">Vue</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content container">
+        <p>In our frontend course, embark on a journey into the captivating world of web development where creativity
+            meets functionality. Discover the essential tools and techniques to craft visually stunning and
+            user-friendly interfaces that captivate audiences. From mastering HTML and CSS fundamentals to diving deep
+            into JavaScript for dynamic interactivity, this course equips you with the skills needed to breathe life
+            into static web pages. Explore responsive design principles to ensure seamless experiences across devices,
+            and delve into the intricacies of frameworks like React and Vue.js to build powerful, scalable web
+            applications.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

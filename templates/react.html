@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: red; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(250, 136, 136);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    <h1>React Introduction</h1>
+<p>React is a JavaScript library for building user interfaces, particularly for single-page applications where UI changes are frequent. It was created by Facebook and has a large community of developers. React allows you to create reusable UI components and manage their state efficiently. It uses a virtual DOM to improve performance by minimizing direct manipulation of the actual DOM. React's declarative approach makes it easier to reason about your UI, as you describe how your UI should look based on the application's state. This makes it particularly well-suited for building complex and interactive web applications.</p>
+<h1>React Folder Structure</h1>
+<p>In a typical React project, the folder structure might look something like this:</p>
+<pre>
+my-react-app/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   ├── components/
+│   │   ├── Header.js
+│   │   ├── Sidebar.js
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   └── ...
+│   ├── services/
+│   │   └── api.js
+│   ├── styles/
+│   │   └── main.css
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .gitignore
+├── package.json
+└── README.md
+</pre>
+<p>This structure is a common starting point and can be adjusted based on the specific needs of your project.</p>
+
+
+<h1>React Project Demo</h1>
+<p>Creating a demo for a React project involves setting up a basic application that showcases some key features. Here's a simple example of a React project that displays a list of items and allows the user to add new items:</p>
+<pre>
+First, make sure you have Node.js and npm (Node Package Manager) installed. You can download them from the official website: https://nodejs.org/
+
+1. Create a new React project using Create React App:
+
+npx create-react-app demo-app
+
+2. Navigate to the project directory:
+
+cd demo-app
+
+3. Replace the contents of src/App.js with the following code:
+
+import React, { useState } from 'react';
+
+function App() {
+  const [items, setItems] = useState([]);
+  const [text, setText] = useState('');
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!text.trim()) return;
+    setItems([...items, { id: Date.now(), text }]);
+    setText('');
+  };
+
+  return (
+    <div>
+    </pre>
+    <hr>
+      <h1>React Demo App</h1>
+      <hr>
+      <pre>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={text} onChange={handleChange} />
+        <button type="submit">Add Item</button>
+      </form>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+
+4. Run the development server:
+
+npm start
+
+5. Open http://localhost:3000 in your browser to see the demo app. You can enter text in the input field and click "Add Item" to add new items to the list.
+
+This is a basic example, but you can expand on it by adding more features, styling, and components to create a more complex demo for your React project.
+</pre>
+
+
+
+<h1>React Functions and Hooks</h1>
+<p>In React, functions are used to create components, which are the building blocks of a React application. Function components are simpler and more lightweight than class components, making them the preferred way to create components in modern React applications.</p>
+<p>React Hooks are functions that let you use state and other React features in functional components. They were introduced in React 16.8 to allow functional components to have state and side effects. Some commonly used React Hooks include <code>useState</code>, <code>useEffect</code>, <code>useContext</code>, and <code>useReducer</code>.</p>
+<pre>
+1. useState: This Hook allows functional components to have state. It returns an array with the current state value and a function that lets you update it. Example:
+
+const [count, setCount] = useState(0);
+
+2. useEffect: This Hook lets you perform side effects in functional components. It runs after every render and can be used for data fetching, subscriptions, or manually changing the DOM. Example:
+
+useEffect(() => {
+  document.title = `You clicked ${count} times`;
+}, [count]);
+
+3. useContext: This Hook lets you subscribe to React context without introducing nesting. It allows you to access the context value within a functional component. Example:
+
+const theme = useContext(ThemeContext);
+
+4. useReducer: This Hook is usually preferable to useState when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. Example:
+
+const [state, dispatch] = useReducer(reducer, initialState);
+</pre>
+<p>These are just a few examples of React Hooks. They provide a way to use React features in functional components, allowing you to write more concise and readable code.</p>
+
+
+<h1>To install React and its related libraries using npm, you can use the following commands:</h1>
+<ul>
+  <li>Install React: <code>npm install react</code></li>
+  <li>Install React DOM (for web applications): <code>npm install react-dom</code></li>
+  <li>Install React Router (for routing in React applications): <code>npm install react-router-dom</code></li>
+  <li>Install Axios (for making HTTP requests): <code>npm install axios</code></li>
+  <li>Install Redux (for state management): <code>npm install redux react-redux</code></li>
+  <li>Install styled-components (for styling components with CSS-in-JS): <code>npm install styled-components</code></li>
+  <li>Install prop-types (for type checking props): <code>npm install prop-types</code></li>
+</ul>
+<p>Install other libraries as needed for your project. Remember to save them as dependencies in your package.json file using the --save or -S flag.</p>
+
+
+```jsx
+<h1>React Data Fetching and Authentication</h1>
+<p>To fetch data and handle authentication in a React application, you can use libraries like Axios for data fetching and JWT (JSON Web Tokens) for authentication. Here's a basic example of how you can fetch data from an API and handle authentication using React and Axios:</p>
+<pre>
+1. Install Axios:
+
+   npm install axios
+
+2. Create a service for handling API requests (services/api.js):
+
+   import axios from 'axios';
+
+   const api = axios.create({
+     baseURL: 'https://your-api-url.com',
+   });
+
+   export default api;
+
+3. Fetch data from the API in a component (components/ExampleComponent.js):
+
+   import React, { useEffect, useState } from 'react';
+   import api from '../services/api';
+
+   const ExampleComponent = () => {
+     const [data, setData] = useState([]);
+
+     useEffect(() => {
+       const fetchData = async () => {
+         try {
+           const response = await api.get('/your-endpoint');
+           setData(response.data);
+         } catch (error) {
+           console.error('Error fetching data:', error);
+         }
+       };
+
+       fetchData();
+     }, []);
+
+     return (
+       <div>
+       </pre>
+       <hr>
+         <h1>Example Component</h1>
+         <hr>
+         <pre>
+         <ul>
+           {data.map((item) => (
+             <li key={item.id}>{item.name}</li>
+           ))}
+         </ul>
+       </div>
+     );
+   };
+
+   export default ExampleComponent;
+
+4. Implement authentication using JWT. Here's a basic example of how you can handle authentication in a React app:
+
+   - Create a context for managing authentication state (contexts/AuthContext.js):
+
+     import React, { createContext, useState } from 'react';
+
+     const AuthContext = createContext();
+
+     const AuthProvider = ({ children }) => {
+       const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+       const login = () => {
+         // Perform login logic here
+         setIsLoggedIn(true);
+       };
+
+       const logout = () => {
+         // Perform logout logic here
+         setIsLoggedIn(false);
+       };
+
+       return (
+        {% comment %} isLoggedIn, login, logout it is inside the double curly braces {% endcomment %}
+         <AuthContext.Provider value= isLoggedIn, login, logout >
+           {children}
+         </AuthContext.Provider>
+       );
+     };
+
+     export { AuthContext, AuthProvider };
+
+   - Wrap your application with the AuthProvider in your index.js file:
+
+     import React from 'react';
+     import ReactDOM from 'react-dom';
+     import App from './App';
+     import { AuthProvider } from './contexts/AuthContext';
+
+     ReactDOM.render(
+       <React.StrictMode>
+         <AuthProvider>
+           <App />
+         </AuthProvider>
+       </React.StrictMode>,
+       document.getElementById('root')
+     );
+
+   - Use the AuthContext in your components to access the authentication state and methods:
+
+     import React, { useContext } from 'react';
+     import { AuthContext } from '../contexts/AuthContext';
+
+     const AuthComponent = () => {
+       const { isLoggedIn, login, logout } = useContext(AuthContext);
+
+       return (
+         <div>
+         </pre>
+           <h1>Auth Component</h1>
+           <pre>
+           {isLoggedIn ? (
+             <button onClick={logout}>Logout</button>
+           ) : (
+             <button onClick={login}>Login</button>
+           )}
+         </div>
+       );
+     };
+
+     export default AuthComponent;
+</pre>
+<p>These examples provide a basic overview of how you can fetch data from an API and handle authentication in a React application. Actual implementation details may vary based on your specific requirements and the libraries you choose to use.</p>
+
+</body>
+</html>

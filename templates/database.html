@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+   <style>
+    /* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/app1/image/db.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: purple;
+    border-radius: 5px;
+  }
+  
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    gap: 1vw;
+    list-style: none;
+  }
+  
+  li a:hover {
+    background-color: whitesmoke;
+    color: purple;
+    font-weight: bolder;
+  }
+  h3{
+    color: red;
+  }
+  
+  p {
+    font-size: 2vw;
+    line-height: 1.5;
+    color: black;
+    margin-bottom: 20px;
+    padding: 4vw;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Media query for responsiveness */
+  @media screen and (max-width: 480px) {
+    p {
+      font-size: 3vw;
+      padding: 6vw;
+    }
+    ul {
+        margin: 1vw;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: blue;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 7px 8px;
+        text-decoration: none;
+      }
+  }
+  
+   </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="{% url 'mongo' %}">MongoDB</a></li>
+        <li><a href="{% url 'sql' %}">MySQL</a></li>
+        <li><a href="{% url 'psql' %}">PostgreSQL</a></li>
+        <li><a href="{% url 'mariadb' %}">MariaDB</a></li>
+        <li><a href="{% url 'redis' %}">Redis</a></li>
+    </ul>
+    <div>
+        <p>Databases stand as the bedrock upon which countless
+            applications, systems, and businesses rely. A database course delves into the intricacies of organizing,
+            storing, retrieving, and managing data effectively. It's a journey through the evolution of database
+            systems, from the early hierarchical and network models to the robust relational databases of today, and
+            into the realm of NoSQL and NewSQL databases, catering to the diverse needs of contemporary applications.
+            Through this course, students embark on a quest to understand the fundamental concepts such as data
+            modeling, normalization, indexing, and query optimization.
+        </p>
+    </div>
+
+
+</body>
+
+</html>

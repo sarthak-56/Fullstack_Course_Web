@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby</title>
+   <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: rgba(0, 102, 255, 1); 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(129, 167, 247);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+   </style>
+</head>
+
+<body>
+    
+    <h1>Ruby Overview</h1>
+    <hr>
+
+    <p>Ruby is a dynamic, reflective, object-oriented, general-purpose programming language known for its simplicity and
+        productivity. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan. Ruby's
+        philosophy emphasizes human-readable code and developer happiness, aiming to make programming fun and natural.
+    </p>
+    <hr>
+    <h1>Key Features</h1>
+    <hr>
+    <ol>
+        <li><strong>Object-Oriented:</strong> Everything in Ruby is an object, including classes and primitive data
+            types. It supports features such as classes, inheritance, and mixins.</li>
+        <li><strong>Dynamic Typing:</strong> Ruby is dynamically typed, meaning you don't need to specify the data type
+            of variables. Types are determined at runtime.</li>
+        <li><strong>Garbage Collection:</strong> Ruby has automatic memory management through garbage collection, making
+            memory allocation and deallocation transparent to the developer.</li>
+        <li><strong>Blocks and Procs:</strong> Ruby has powerful block syntax and supports Procs (closures), allowing
+            for flexible and concise code.</li>
+        <li><strong>Metaprogramming:</strong> Ruby allows for metaprogramming, which means you can write code that
+            writes code, enabling dynamic modifications to classes and objects at runtime.</li>
+        <li><strong>Libraries and Gems:</strong> Ruby has a rich ecosystem of libraries and gems (packaged libraries)
+            that provide additional functionality for various tasks.</li>
+        <li><strong>Rails Framework:</strong> Ruby on Rails (often referred to as Rails) is a popular web application
+            framework written in Ruby. It follows the convention over configuration (CoC) and don't repeat yourself
+            (DRY) principles, emphasizing rapid development and clean, maintainable code.</li>
+        <li><strong>Community and Culture:</strong> Ruby has a vibrant and welcoming community known for its
+            friendliness and willingness to help. The Ruby community values open source, sharing, and collaboration.
+        </li>
+    </ol>
+
+    <p>Overall, Ruby's focus on simplicity, readability, and developer happiness has made it a popular choice for web
+        development, scripting, and software prototyping. It continues to be a language of choice for many developers
+        around the world.</p>
+    <hr>
+    <h1>Project Overview - Online Bookstore</h1>
+    <hr>
+    <hr>
+    <h1>Description</h1>
+    <hr>
+    <p>An online platform for buying and selling books.</p>
+    <hr>
+    <h1>Purpose</h1>
+    <hr>
+    <p>To provide a convenient platform for book enthusiasts to browse, buy, and sell books.</p>
+    <hr>
+    <h1>Key Features</h1>
+    <hr>
+    <ul>
+        <li>User authentication and authorization</li>
+        <li>Browse books by category, author, or title</li>
+        <li>Search for books using keywords</li>
+        <li>Add books to cart and checkout</li>
+        <li>User profiles with purchase history</li>
+        <li>Seller profiles for managing listed books</li>
+        <li>Admin panel for managing users, books, and orders</li>
+    </ul>
+    <hr>
+    <h1>Technologies Used</h1>
+    <hr>
+    <ul>
+        <li>Ruby on Rails framework for web development</li>
+        <li>PostgreSQL database for storing data</li>
+        <li>Bootstrap for front-end styling</li>
+        <li>Devise gem for user authentication</li>
+        <li>CarrierWave gem for handling file uploads (book covers)</li>
+        <li>RSpec and Capybara for testing</li>
+        <li>Heroku for deployment</li>
+        <li>Git for version control</li>
+        <li>Trello for project management</li>
+    </ul>
+    <hr>
+    <h1>Team Members</h1>
+    <hr>
+    <ul>
+        <li>John Doe (Project Manager)</li>
+        <li>Jane Smith (Lead Developer)</li>
+        <li>Alex Johnson (UI/UX Designer)</li>
+        <li>Emily Brown (Backend Developer)</li>
+        <li>Mike Wilson (Tester)</li>
+    </ul>
+    <hr>
+    <h1>Timeline</h1>
+    <hr>
+    <p>The project is scheduled to be completed in 4 months, starting from January 2022 to April 2022.</p>
+    <hr>
+    <h1>Challenges</h1>
+    <hr>
+    <p>Some of the challenges expected during the project include integrating payment gateway, optimizing database
+        queries for performance, and ensuring the platform is user-friendly and responsive.</p>
+    <hr>
+    <h1>Future Enhancements</h1>
+    <hr>
+    <p>Future enhancements may include adding reviews and ratings for books, implementing recommendations based on user
+        preferences, and expanding the platform to include other types of media such as ebooks and audiobooks.</p>
+    <hr>
+    <h1>Ruby on Rails Folder Structure</h1>
+    <hr>
+    <hr>
+    <h1>myapp/</h1>
+    <hr>
+    <ul>
+        <li><strong>app/</strong>: Contains the core application code
+            <ul>
+                <li>assets/: Contains stylesheets, JavaScript files, and images</li>
+                <li>controllers/: Contains controller classes</li>
+                <li>models/: Contains model classes</li>
+                <li>views/: Contains view templates</li>
+            </ul>
+        </li>
+        <li><strong>bin/</strong>: Contains binary executable files</li>
+        <li><strong>config/</strong>: Contains application configuration
+            <ul>
+                <li>environments/: Contains environment-specific configurations</li>
+                <li>initializers/: Contains initialization code</li>
+                <li>locales/: Contains localization files</li>
+                <li>routes.rb: Contains the application's route definitions</li>
+            </ul>
+        </li>
+        <li><strong>db/</strong>: Contains database schema and migrations</li>
+        <li><strong>lib/</strong>: Contains custom libraries</li>
+        <li><strong>log/</strong>: Contains log files</li>
+        <li><strong>public/</strong>: Contains static files and assets accessible to the public</li>
+        <li><strong>storage/</strong>: Contains files uploaded through the application</li>
+        <li><strong>test/</strong>: Contains test code</li>
+        <li><strong>tmp/</strong>: Contains temporary files</li>
+        <li><strong>vendor/</strong>: Contains third-party code (managed by Bundler)</li>
+        <li><strong>Gemfile</strong>: Contains gem dependencies</li>
+        <li><strong>Rakefile</strong>: Contains Rake tasks</li>
+        <li><strong>README.md</strong>: Contains project documentation</li>
+        <li><strong>config.ru</strong>: Rack configuration file</li>
+    </ul>
+    <hr>
+    <h1>Ruby on Rails Hello World</h1>
+    <hr>
+    <hr>
+    <h1>1. Create a new Rails project:</h1>
+    <hr>
+    <pre><code>rails new hello_world</code></pre
+    <header>
+        <h1>Blog App</h1>
+    </header>
+    
+    <nav>
+        <a href="/">Home</a>
+        <a href="/new">New Post</a>
+    </nav>
+    
+    <div class="container">
+        <div class="post">
+            <h1>First Post</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        </div>
+        <div class="post">
+            <h1>Second Post</h1>
+            <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+        </div>
+    </div>
+<hr>
+    <h1>Database Connection Example</h1>
+<hr>
+<p>This is an example of how to establish a database connection in Ruby using the PostgreSQL (`pg`) gem.</p>
+
+<pre><code>
+require 'pg'
+
+# Database connection parameters
+db_params = {
+  dbname: 'your_database_name',
+  user: 'your_database_user',
+  password: 'your_database_password',
+  host: 'your_database_host',
+  port: 'your_database_port'
+}
+
+# Establish a connection
+begin
+  conn = PG.connect(db_params)
+  puts 'Connected to the database!'
+rescue PG::Error => e
+  puts "An error occurred: #{e.message}"
+ensure
+  conn.close if conn
+end
+</code></pre>
+    <h6>created by : Sarthak Ranjan Mishra</h6>
+</body>
+
+</html>

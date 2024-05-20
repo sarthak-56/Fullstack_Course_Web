@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: red; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(250, 136, 136);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+
+<h1>Vue.js Introduction</h1>
+<p>Vue.js is a progressive JavaScript framework used for building user interfaces (UIs) and single-page applications. It is designed to be incrementally adoptable, meaning you can start using it in your existing projects gradually without having to rewrite everything.</p>
+<p>Vue.js is known for its simplicity and ease of integration with other projects and libraries. It provides reactive and composable view components, a simple and flexible syntax for templating, and tools for handling state management efficiently.</p>
+<p>One of the key features of Vue.js is its reactivity system, which allows you to build dynamic and interactive user interfaces with minimal effort. When the data in your application changes, Vue.js automatically updates the affected parts of the UI to reflect those changes.</p>
+<p>Vue.js also offers a rich ecosystem of official and community-contributed libraries and plugins, making it easy to add features like routing, state management, and server-side rendering to your Vue.js projects.</p>
+<p>Overall, Vue.js is a popular choice for developers looking to build modern web applications due to its simplicity, flexibility, and performance.</p>
+
+
+<h1>Vue.js Overview</h1>
+<p>Vue.js is a progressive JavaScript framework used for building user interfaces (UIs) and single-page applications. It is designed to be approachable, versatile, and performant.</p>
+
+<h1>Vue Instance</h1>
+<p>At the core of Vue.js is the Vue instance, which serves as the root of a Vue application. You create a Vue instance with the <strong>new Vue()</strong> constructor and provide it with an options object that defines the behavior of the instance.</p>
+
+<h1>Vue Components</h1>
+<p>Vue components are reusable Vue instances that encapsulate a part of the user interface. They are composed of three parts: template (HTML with Vue-specific syntax), script (JavaScript), and style (CSS). Components allow you to build complex UIs by composing smaller, self-contained units.</p>
+
+<h1>Vue Directives</h1>
+<p>Vue directives are special attributes that provide reactive behavior to the DOM. Directives are prefixed with <strong>v-</strong> and are used to manipulate the DOM, apply data binding, and control the rendering of elements.</p>
+
+<h1>Vue Templates</h1>
+<p>Vue templates are used to define the structure of your Vue components. Templates are written using HTML with Vue-specific syntax that allows you to bind data, loop over arrays, conditionally render content, and more.</p>
+
+<h1>Vue Reactivity</h1>
+<p>Vue's reactivity system allows you to declaratively render data to the DOM and automatically update the DOM when the data changes. Vue achieves this reactivity by tracking dependencies between data properties and the rendered output.</p>
+
+<h1>Vue Lifecycle Hooks</h1>
+<p>Vue provides a set of lifecycle hooks that allow you to run code at specific stages of a component's lifecycle. These hooks include <strong>beforeCreate</strong>, <strong>created</strong>, <strong>beforeMount</strong>, <strong>mounted</strong>, <strong>beforeUpdate</strong>, <strong>updated</strong>, <strong>beforeDestroy</strong>, and <strong>destroyed</strong>.</p>
+
+<h1>Vue Router</h1>
+<p>Vue Router is the official router for Vue.js, which allows you to create single-page applications with dynamic, client-side routing. Vue Router provides features like nested routes, route params, navigation guards, and more.</p>
+
+<h1>Vuex (State Management)</h1>
+<p>Vuex is a state management pattern and library for Vue.js applications. It serves as a centralized store for all the components in an application, allowing you to manage state in a predictable way.</p>
+
+<h1>Vue CLI (Command Line Interface)</h1>
+<p>Vue CLI is a command-line tool that helps you quickly scaffold Vue.js projects with a predefined set of configurations and tools. It also provides a built-in development server, build tools, and plugin system for extending functionality.</p>
+
+<h1>Vue Devtools</h1>
+<p>Vue Devtools is a browser extension that allows you to inspect the Vue component hierarchy, monitor state and props, and debug Vue applications in the browser.</p>
+
+<h1>Vue Community and Ecosystem</h1>
+<p>Vue has a vibrant community and ecosystem with a wide range of plugins, libraries, and tools contributed by the community. These resources help extend Vue's functionality and make it easier to build complex applications.</p>
+
+<h1>Conclusion</h1>
+<p>Vue.js is a versatile and powerful framework for building modern web applications. Its simplicity, flexibility, and performance make it a popular choice among developers for projects of all sizes. Whether you're building a simple UI component or a complex single-page application, Vue.js provides the tools you need to get the job done efficiently.</p>
+
+<h1>Vue Project Folder Structure</h1>
+<p>A typical Vue.js project folder structure might look like this:</p>
+<pre>
+my-vue-app/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── assets/
+│   │   └── logo.png
+│   ├── components/
+│   │   └── HelloWorld.vue
+│   ├── views/
+│   │   └── Home.vue
+│   ├── App.vue
+│   └── main.js
+├── node_modules/
+├── package.json
+├── README.md
+└── ...
+</pre>
+<p>Here's a brief overview of each directory and file:</p>
+<ul>
+  <li><strong>public/</strong>: Contains the index.html file and other static assets. The index.html file is the entry point for your Vue.js application.</li>
+  <li><strong>src/</strong>: Contains the source code for your Vue.js application.</li>
+  <ul>
+    <li><strong>assets/</strong>: Contains static assets like images, fonts, etc.</li>
+    <li><strong>components/</strong>: Contains Vue components that can be reused across your application.</li>
+    <li><strong>views/</strong>: Contains Vue components that represent different views or pages of your application.</li>
+    <li><strong>App.vue</strong>: The root Vue component that is mounted to the DOM.</li>
+    <li><strong>main.js</strong>: The entry point for your Vue.js application where you create the Vue instance and configure any plugins or libraries.</li>
+  </ul>
+  <li><strong>node_modules/</strong>: Contains the dependencies installed for your project.</li>
+  <li><strong>package.json</strong>: Contains metadata about your project and its dependencies, as well as scripts for running various tasks.</li>
+  <li><strong>README.md</strong>: Contains information about your project, how to set it up, and how to contribute.</li>
+</ul>
+<p>This is a basic structure, and actual projects may have additional directories and files based on their specific requirements and complexity.</p>
+
+
+<h1>Vue Redirect Page</h1>
+<p>To redirect a page in a Vue.js application, you can use the <code>vue-router</code> library. Here's an example of how you can set up a simple redirect:</p>
+<pre>
+  <code>
+    // main.js
+
+    import Vue from 'vue';
+    import VueRouter from 'vue-router';
+    import App from './App.vue';
+
+    Vue.use(VueRouter);
+
+    const routes = [
+      { path: '/old-url', redirect: '/new-url' },
+      // other routes...
+    ];
+
+    const router = new VueRouter({
+      routes,
+      mode: 'history' // Use the HTML5 History API for cleaner URLs
+    });
+
+    new Vue({
+      el: '#app',
+      router,
+      render: h => h(App)
+    });
+  </code>
+</pre>
+<p>In your <code>App.vue</code> file, set up the <code>router-view</code>:</p>
+<pre>
+  <code>
+    <!-- App.vue -->
+
+    <template>
+      <div id="app">
+        <router-view></router-view>
+      </div>
+    </template>
+
+    <script>
+    export default {
+      name: 'App'
+    };
+    </script>
+
+    <style>
+    /* Styles here */
+    </style>
+  </code>
+</pre>
+<p>Now, when you visit <code>/old-url</code> in your Vue.js application, it will automatically redirect to <code>/new-url</code>.</p>
+<p>Remember to configure your server to handle the history mode if you're using it (<code>mode: 'history'</code>). This typically involves setting up your server to redirect all requests to your <code>index.html</code> file, where your Vue.js application is loaded, to ensure that the correct route is matched by the client-side router.</p>
+
+</body>
+</html>

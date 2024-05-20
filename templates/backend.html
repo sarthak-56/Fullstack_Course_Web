@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Doc</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/app1/image/nav.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+            backdrop-filter: blur(10px);
+            padding: 4vw;
+            font-weight: bolder;
+            text-align: center;
+            border-radius: 10px;
+            max-height: 70vh;
+            overflow-y: auto;
+            color:blue;
+        }
+
+        .nav-link:hover {
+            background-color: blue;
+            color: blue;
+            font-weight: bolder;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 139, 0.7); /* Semi-transparent blue */
+        }
+
+        @media (max-width: 767.98px) {
+            body {
+                justify-content: flex-start;
+                padding-top: 20px;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                margin-bottom: 10px;
+            }
+
+            .content {
+                padding: 6vw;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark rounded mb-4">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'django' %}">Django</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'express' %}">Express</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'laravel' %}">Laravel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'spring' %}">Spring Boot</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'ruby' %}">Ruby</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content container">
+        <p>In this comprehensive backend course, you'll delve into the depths of backend development, learning the intricacies of building powerful, scalable applications. From setting up servers and databases to designing RESTful APIs, you'll gain a solid understanding of backend architecture and best practices. With hands-on projects and real-world examples, you'll master technologies like Node.js, Express, MongoDB, and more. By the end of the course, you'll have the skills and confidence to tackle any backend development challenge.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

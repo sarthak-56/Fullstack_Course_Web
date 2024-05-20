@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL</title>
+   <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: purple; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(242, 143, 242);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+   </style>
+</head>
+<body>
+    <h1>MySQL Introduction</h1>
+    <p>MySQL is an open-source relational database management system (RDBMS) that uses Structured Query Language (SQL). It is known for its reliability, flexibility, and ease of use. MySQL is commonly used for web applications, particularly those built on the LAMP (Linux, Apache, MySQL, PHP/Python/Perl) or similar software stack.</p>
+    <p>Key Features and Concepts:</p>
+    <ul>
+        <li><strong>Relational Database:</strong> MySQL organizes data into tables consisting of rows and columns.</li>
+        <li><strong>SQL:</strong> MySQL uses SQL for querying and manipulating data.</li>
+        <li><strong>Indexes:</strong> MySQL supports indexes for quickly locating rows in a table.</li>
+        <li><strong>Transactions:</strong> MySQL supports transactions for ensuring data integrity.</li>
+        <li><strong>Stored Procedures:</strong> MySQL allows you to define reusable SQL code blocks.</li>
+        <li><strong>Triggers:</strong> MySQL supports triggers for automatically executing SQL code in response to events.</li>
+        <li><strong>User Management:</strong> MySQL provides a user management system for controlling access to the database.</li>
+        <li><strong>Security:</strong> MySQL offers security features such as data encryption and access control mechanisms.</li>
+        <li><strong>Scalability:</strong> MySQL is designed to be scalable for growing applications.</li>
+    </ul>
+
+    <h1>MySQL Installation</h1>
+
+<p><strong>1. Download MySQL:</strong> Visit the <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener noreferrer">MySQL download page</a> and download the MySQL Community Server installer for your operating system.</p>
+
+<p><strong>2. Install MySQL:</strong> Run the installer and follow the on-screen instructions. During the installation process, you may be prompted to choose a setup type (e.g., Developer Default, Server Only, Full) and configure additional settings such as the MySQL server port, root password, and authentication method.</p>
+
+<p><strong>3. Start MySQL Server:</strong> After installation, start the MySQL server. On Windows, you can do this from the Windows Services Manager. On Linux, you can start the MySQL service using the following command:</p>
+
+<pre><code>sudo service mysql start
+</code></pre>
+
+<p><strong>4. Secure MySQL Installation (Optional):</strong> MySQL provides a script called <code>mysql_secure_installation</code> that can help you secure your MySQL installation by setting a root password, removing anonymous users, and disabling remote root login. Run the script and follow the instructions:</p>
+
+<pre><code>mysql_secure_installation
+</code></pre>
+
+<p><strong>5. Access MySQL:</strong> You can access MySQL using the MySQL command-line client. Use the following command:</p>
+
+<pre><code>mysql -u root -p
+</code></pre>
+
+<p>Enter the root password when prompted. You should now be able to access the MySQL shell.</p>
+
+<p><strong>6. Additional Configuration (Optional):</strong> You may need to configure MySQL to start automatically on system boot, adjust server settings in the MySQL configuration file (e.g., <code>my.cnf</code>), and create additional MySQL users and databases as needed.</p>
+
+<p>That's it! You now have MySQL installed and running on your system.</p>
+<h1>MySQL Benefits</h1>
+<p>MySQL, an open-source relational database management system (RDBMS), offers several benefits:</p>
+<ul>
+  <li><strong>Cost-Effective:</strong> Being open-source, MySQL is free to use, making it a cost-effective option for businesses and developers.</li>
+  <li><strong>Scalability:</strong> MySQL can handle large amounts of data and is known for its scalability. It can be used for small projects as well as enterprise-level applications.</li>
+  <li><strong>Performance:</strong> MySQL is optimized for fast performance, making it suitable for high-demand applications.</li>
+  <li><strong>Ease of Use:</strong> MySQL is easy to install and set up, with a well-documented and user-friendly interface. It also supports SQL, which is a widely used database language.</li>
+  <li><strong>Cross-Platform Compatibility:</strong> MySQL is compatible with various operating systems, including Windows, Linux, macOS, and others.</li>
+  <li><strong>Community Support:</strong> MySQL has a large and active community of developers and users who contribute to its development and provide support.</li>
+  <li><strong>Security:</strong> MySQL offers robust security features, including data encryption, access controls, and user authentication, to protect data from unauthorized access.</li>
+  <li><strong>Reliability:</strong> MySQL is known for its reliability and stability, with features like data replication and clustering for high availability.</li>
+  <li><strong>Integration:</strong> MySQL integrates well with other technologies and frameworks, making it a versatile choice for building applications.</li>
+</ul>
+
+
+<h1>MySQL Query</h1>
+<p>Here is an example of a MySQL query to select all records from a table:</p>
+<pre>
+SELECT * FROM table_name;
+</pre>
+
+<p>You can also add conditions to your query using the WHERE clause. For example, to select records from a table where a certain condition is met:</p>
+<pre>
+SELECT * FROM table_name WHERE condition;
+</pre>
+
+<p>Replace condition with the specific condition you want to apply, such as column_name = value.</p>
+
+<p>You can also perform other operations like inserting, updating, and deleting records using different MySQL queries. Each query has its syntax and purpose, depending on the operation you want to perform.</p>
+
+
+<h1>MySQL Queries</h1>
+<p>Here are examples of MySQL queries for updating, deleting, and inserting records:</p>
+
+<pre>
+-- Update Query:
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+
+-- Delete Query:
+DELETE FROM table_name
+WHERE condition;
+
+-- Insert Query:
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+</pre>
+
+<p>Replace table_name, column1, column2, etc. with your actual table and column names, and replace value1, value2, etc. with the values you want to use.</p>
+
+<h1>MySQL Operators</h1>
+<ul>
+  <li><strong>Arithmetic Operators:</strong> Used to perform arithmetic operations like addition, subtraction, multiplication, division, etc.
+    <ul>
+      <li><strong>+</strong> (Addition)</li>
+      <li><strong>-</strong> (Subtraction)</li>
+      <li><strong>*</strong> (Multiplication)</li>
+      <li><strong>/</strong> (Division)</li>
+      <li><strong>%</strong> (Modulus)</li>
+    </ul>
+  </li>
+  <li><strong>Comparison Operators:</strong> Used to compare two expressions.
+    <ul>
+      <li><strong>=</strong> (Equal to)</li>
+      <li><strong>!=</strong> or <strong>&lt;&gt;</strong> (Not equal to)</li>
+      <li><strong>&lt;</strong> (Less than)</li>
+      <li><strong>&gt;</strong> (Greater than)</li>
+      <li><strong>&lt;=</strong> (Less than or equal to)</li>
+      <li><strong>&gt;=</strong> (Greater than or equal to)</li>
+    </ul>
+  </li>
+  <li><strong>Logical Operators:</strong> Used to combine multiple conditions.
+    <ul>
+      <li><strong>AND</strong> (Logical AND)</li>
+      <li><strong>OR</strong> (Logical OR)</li>
+      <li><strong>NOT</strong> (Logical NOT)</li>
+    </ul>
+  </li>
+  <li><strong>Assignment Operators:</strong> Used to assign values to variables.
+    <ul>
+      <li><strong>=</strong> (Assignment)</li>
+    </ul>
+  </li>
+  <li><strong>Concatenation Operator:</strong> Used to concatenate two or more strings.
+    <ul>
+      <li><strong>CONCAT()</strong> (Concatenation function)</li>
+      <li><strong>||</strong> (Concatenation operator, not supported in all versions of MySQL)</li>
+    </ul>
+  </li>
+  <li><strong>Bitwise Operators:</strong> Used to perform bitwise operations on integers.
+    <ul>
+      <li><strong>&</strong> (Bitwise AND)</li>
+      <li><strong>|</strong> (Bitwise OR)</li>
+      <li><strong>^</strong> (Bitwise XOR)</li>
+      <li><strong>~</strong> (Bitwise NOT)</li>
+      <li><strong>&lt;&lt;</strong> (Left shift)</li>
+      <li><strong>&gt;&gt;</strong> (Right shift)</li>
+    </ul>
+  </li>
+</ul>
+
+
+<h1>Example of Using Operator in MySQL Query</h1>
+<p>Here's an example of using the <strong>=</strong> operator in a MySQL query to retrieve data:</p>
+<pre>
+SELECT * FROM users WHERE username = 'john_doe';
+</pre>
+
+<p>In this query, the <strong>=</strong> operator is used in the <code>WHERE</code> clause to filter the <code>users</code> table to only retrieve rows where the <code>username</code> column is equal to 'john_doe'.</p>
+
+<p>Similarly, you can use other operators like <strong>&lt;</strong>, <strong>&gt;</strong>, <strong>&lt;=</strong>, <strong>&gt;=</strong>, <strong>!=</strong>, <strong>AND</strong>, <strong>OR</strong>, etc., in your queries to perform various operations such as comparisons, logical operations, and more.</p>
+
+
+<h1>MySQL JOINs</h1>
+<p>In MySQL, the JOIN clause is used to combine rows from two or more tables based on a related column between them. There are several types of joins:</p>
+<pre>
+-- INNER JOIN
+SELECT columns
+FROM table1
+INNER JOIN table2 ON table1.column = table2.column;
+
+-- LEFT JOIN (or LEFT OUTER JOIN)
+SELECT columns
+FROM table1
+LEFT JOIN table2 ON table1.column = table2.column;
+
+-- RIGHT JOIN (or RIGHT OUTER JOIN)
+SELECT columns
+FROM table1
+RIGHT JOIN table2 ON table1.column = table2.column;
+
+-- FULL JOIN (or FULL OUTER JOIN)
+SELECT columns
+FROM table1
+FULL JOIN table2 ON table1.column = table2.column;
+
+-- CROSS JOIN
+SELECT columns
+FROM table1
+CROSS JOIN table2;
+</pre>
+
+<p>These are the basic types of JOINs in MySQL. Each type of JOIN has its use case depending on the relationship between the tables and the desired result set.</p>
+
+
+<h1>MySQL Condition in Clauses</h1>
+<p>In MySQL, a condition is a logical expression that evaluates to true, false, or unknown. Conditions are used in various clauses to filter rows, join tables, and perform other operations. Here are some common clauses where conditions are used:</p>
+<pre>
+-- WHERE Clause: Used to filter rows based on a specified condition.
+SELECT * FROM table_name WHERE condition;
+
+-- HAVING Clause: Used to filter groups based on a specified condition.
+SELECT column_name, COUNT(*)
+FROM table_name
+GROUP BY column_name
+HAVING COUNT(*) > 1;
+
+-- JOIN Clause: Used to join tables based on a specified condition.
+SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+
+-- CASE Statement: Used to perform conditional logic within a query.
+SELECT column_name,
+       CASE
+           WHEN condition1 THEN 'Value1'
+           WHEN condition2 THEN 'Value2'
+           ELSE 'Other'
+       END AS new_column
+FROM table_name;
+
+-- IF Statement: Used to perform conditional logic within a query.
+SELECT column_name,
+       IF(condition, 'Value1', 'Value2') AS new_column
+FROM table_name;
+
+-- ORDER BY Clause: Used to sort the result set based on a specified condition.
+SELECT * FROM table_name ORDER BY column_name DESC;
+
+-- LIMIT Clause: Used to limit the number of rows returned based on a specified condition.
+SELECT * FROM table_name LIMIT 10;
+</pre>
+
+<p>Conditions can include comparisons, logical operators (AND, OR, NOT), and functions to create complex expressions that determine which rows are selected or affected by the query.</p>
+
+
+<pre>
+    -- Delete Column
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+    </pre>
+    
+    <p>To create a new column:</p>
+    
+    <pre>
+    -- Add Column
+    ALTER TABLE table_name
+    ADD COLUMN new_column_name column_definition;
+    </pre>
+    
+    <p>To create a new table:</p>
+    
+    <pre>
+    CREATE TABLE new_table_name (
+        column1_name column1_definition,
+        column2_name column2_definition,
+        ...
+    );
+    </pre>
+    
+    <p>Replace <code>table_name</code> with the name of the table you are modifying, <code>column_name</code> with the name of the column you want to delete, <code>new_column_name</code> with the name of the new column, and <code>column_definition</code> with the definition of the new column (e.g., data type, constraints).</p>
+
+    <pre>
+        -- Delete Column
+        ALTER TABLE table_name
+        DROP COLUMN column_name;
+        </pre>
+        
+        <p>To create a new column:</p>
+        
+        <pre>
+        -- Add Column
+        ALTER TABLE table_name
+        ADD COLUMN new_column_name column_definition;
+        </pre>
+        
+        <p>To create a new table:</p>
+        
+        <pre>
+        CREATE TABLE new_table_name (
+            column1_name column1_definition,
+            column2_name column2_definition,
+            ...
+        );
+        </pre>
+        
+        <p>Replace <code>table_name</code> with the name of the table you are modifying, <code>column_name</code> with the name of the column you want to delete, <code>new_column_name</code> with the name of the new column, and <code>column_definition</code> with the definition of the new column (e.g., data type, constraints).</p>
+        
+        <h1>MySQL Database Configuration</h1>
+        <p>MySQL database configuration involves setting up various parameters and options to optimize the database performance, security, and functionality. Here are some common aspects of MySQL database configuration:</p>
+        <ul>
+          <li><strong>Configuration Files:</strong> MySQL uses configuration files (e.g., <code>my.cnf</code> on Linux, <code>my.ini</code> on Windows) to manage settings. These files are typically located in the MySQL installation directory or system configuration directory.</li>
+          <li><strong>Database Settings:</strong> Configuration files include settings for the database engine, storage engines (e.g., InnoDB, MyISAM), buffer sizes, thread settings, and other database-specific options.</li>
+          <li><strong>Security Settings:</strong> Configuration includes options for setting the root password, enabling/disabling remote access, and configuring user privileges and permissions.</li>
+          <li><strong>Logging:</strong> MySQL can log various types of information, including errors, queries, and general activity. Configuration includes setting the log file path, log format, and log verbosity.</li>
+          <li><strong>Character Encoding:</strong> MySQL supports different character sets and collations. Configuration includes setting the default character set for the server and databases.</li>
+          <li><strong>Performance Tuning:</strong> Configuration includes settings for optimizing performance, such as query cache size, key buffer size, and <code>innodb_buffer_pool_size</code> for InnoDB.</li>
+          <li><strong>Network Configuration:</strong> Settings for configuring MySQL to listen on specific IP addresses, ports, and controlling client access.</li>
+          <li><strong>Replication Configuration:</strong> For setting up and configuring replication, including master/slave settings, binary logging, and replication filters.</li>
+          <li><strong>Backup and Recovery Configuration:</strong> Configuration includes settings for managing backups, such as enabling/disabling backups, setting backup frequency, and specifying backup storage locations.</li>
+          <li><strong>Storage Configuration:</strong> For configuring storage options such as data directory location, file-per-table settings, and storage engine-specific settings.</li>
+        </ul>
+        <p>It's important to carefully review and test configuration changes, as incorrect settings can lead to database downtime or performance issues. Restarting the MySQL server is often required for configuration changes to take effect.</p>
+        
+
+<h1>PostgreSQL Queries</h1>
+
+<pre>
+-- UPDATE Query:
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+
+-- DELETE Query:
+DELETE FROM table_name
+WHERE condition;
+
+-- INSERT Query:
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+</pre>
+
+<p>Replace <code>table_name</code>, <code>column1</code>, <code>column2</code>, etc., with your actual table and column names, and replace <code>value1</code>, <code>value2</code>, etc., with the values you want to use.</p>
+
+
+    </body>
+</html>

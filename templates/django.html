@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+   <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: rgba(0, 102, 255, 1); 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(129, 167, 247);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+   </style>
+</head>
+<body>
+    
+    <h1>Django Introduction</h1>
+    
+    <p>
+        Django is a high-level Python web framework,
+        designed for rapid development and clean, pragmatic design.
+        It enables building web applications, emphasizing reusability
+        and efficiency, providing tools for handling databases, user
+        authentication, and URL routing, making web development
+        simpler and faster.
+    </p>
+
+    <div>
+        <hr>
+        <h1>Features</h1>
+        <hr>
+        <ul>
+            <li>Batteries-included</li>
+            <li>URL Routing </li>
+            <li>Security</li>
+            <li>Scalability</li>
+            <li>Versatility</li>
+            <li>Community and Documentation</li>
+        </ul>
+
+    </div>
+
+    <hr>
+    <h1>Django Web Framework</h1>
+    <hr>
+    <p>Django, a powerful web framework built on Python, stands tall as a frontrunner in the world of web development.
+        Originally developed by Adrian Holovaty and Simon Willison in 2003, Django has evolved into a robust,
+        open-source framework that simplifies and streamlines the creation of web applications.
+
+        At its core, Django emphasizes the principle of "batteries included," offering a comprehensive set of tools and
+        functionalities right out of the box. Its design revolves around the DRY (Don't Repeat Yourself) and MVC
+        (Model-View-Controller) principles, enabling developers to create applications quickly and efficiently while
+        maintaining clean and maintainable code.
+
+        One of Django's standout features is its emphasis on reusability and modularity. The framework is composed of
+        several independent components, or "apps," allowing developers to build upon existing functionality or create
+        new features without reinventing the wheel. This modularity not only enhances productivity but also promotes a
+        structured and scalable approach to web development.
+
+    </p>
+    </div>
+    <div>
+        <ul>
+            <li>Django MVT Architechture</li>
+            <li>URLs and Routing: </li>
+            <li>Forms</li>
+            <li>Admin Interface</li>
+            <li>Middleware</li>
+            <li>Authentication and Authorization</li>
+            <li>Static and Media Files</li>
+            <li>Django ORM</li>
+        </ul>
+
+    </div>
+
+
+    <div>
+        <hr>
+        <h1>Django Rest Framework</h1>
+        <hr>
+        <p>
+            Django Rest Framework (DRF) is a powerful toolkit for building web APIs using Django, the popular Python web
+            framework. It simplifies API development by providing robust features like serialization, authentication,
+            and viewsets. DRF leverages Django's functionality to create RESTful APIs effortlessly, allowing developers
+            to define models, serializers, and views to handle HTTP requests and responses.
+
+            Its serialization mechanism transforms complex data types, like Django models, into native Python data types
+            suitable for rendering into JSON, XML, or other content types. Authentication support includes built-in
+            options for session-based authentication, token authentication, OAuth, and more. DRF's viewsets and routers
+            streamline URL routing, reducing repetitive code and enabling quick API configuration.
+
+            Additionally, DRF offers extensive documentation, tutorials, and a supportive community. Its flexibility,
+            performance, and comprehensive toolset make it a go-to choice for crafting robust and scalable web APIs in
+            Django, making API development smoother and more efficient.
+
+
+
+
+
+
+
+        </p>
+    </div>
+    <div>
+        <ul>
+            <li>Django Rest Framework (DRF)</li>
+            <li> Serializers</li>
+            <li>Views</li>
+            <li>Routers</li>
+            <li>Authentication and Permissions</li>
+            <li>Pagination</li>
+            <li>ViewSets </li>
+            <li>Function-Based and Class-Based Views</li>
+            <li>Nested Serializers and Relationships</li>
+            <li>Versioning</li>
+            <li>Testing</li>
+        </ul>
+
+    </div>
+
+
+    <div>
+        <hr>
+        <h1>Security in Django</h1>
+        <hr>
+
+        <ul>
+            <li>
+                <p>
+                    This document is an overview of Django’s security features. It includes advice on securing a
+                    Django-powered site.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Cross Site Scripting (XSS) Protection</strong><br>
+                    XSS attacks allow a user to inject client-side scripts into the browsers of other users. This is
+                    usually achieved by storing the malicious scripts in the database where it will be retrieved and
+                    displayed to other users, or by getting users to click a link which will cause the attacker’s
+                    JavaScript to be executed by the user’s browser. However, XSS attacks can originate from any
+                    untrusted source of data, such as cookies or web services, whenever the data is not sufficiently
+                    sanitized before including it on a page.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Cross Site Request Forgery (CSRF) Protection</strong><br>
+                    CSRF attacks allow a malicious user to execute actions using the credentials of another user without
+                    that user’s knowledge or consent. Django has built-in protection against most types of CSRF attacks,
+                    providing you have enabled and used it where appropriate.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>SQL Injection Protection</strong><br>
+                    SQL injection is a type of attack where a malicious user is able to execute arbitrary SQL code on a
+                    database. Django’s querysets are protected from SQL injection since their queries are constructed
+                    using query parameterization.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <strong>Clickjacking Protection</strong><br>
+                    Clickjacking is a type of attack where a malicious site wraps another site in a frame. Django
+                    contains clickjacking protection in the form of the X-Frame-Options middleware which in a supporting
+                    browser can prevent a site from being rendered inside a frame.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Consider serving static files from a cloud service or CDN to avoid some of these issues. If your
+                    site accepts file uploads, it is strongly advised that you limit these uploads in your web server
+                    configuration to a reasonable size in order to prevent denial of service (DOS) attacks.
+                </p>
+            </li>
+            <li>
+                <p>
+                    If you are serving your own static files, be sure that handlers like Apache’s mod_php, which would
+                    execute static files as code, are disabled. You don’t want users to be able to execute arbitrary
+                    code by uploading and requesting a specially crafted file.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Django’s media upload handling poses some vulnerabilities when that media is served in ways that do
+                    not follow security best practices.
+                </p>
+            </li>
+        </ul>
+
+    </div>
+    <div>
+        <ul>
+            <li>Security Overview</li>
+            <li>Internationalization and localization </li>
+            <li>Performance and optimization</li>
+            <li>Geographic framework</li>
+            <li>Common web application tools</li>
+            <li>The messages framework</li>
+            <li>Configuring the message engine</li>
+            <li>Using messages in views and templates</li>
+            <li>Creating custom message levels</li>
+            <li>The sitemap framework</li>
+            <li>The Django open-source project</li>
+        </ul>
+
+        <pre>
+    project_name/
+    │
+    ├── manage.py
+    ├── project_name/
+    │   ├── __init__.py
+    │   ├── settings.py
+    │   ├── urls.py
+    │   └── wsgi.py
+    │
+    ├── app1/
+    │   ├── migrations/
+    │   ├── __init__.py
+    │   ├── admin.py
+    │   ├── apps.py
+    │   ├── models.py
+    │   ├── tests.py
+    │   └── views.py
+    │
+    └── app2/
+        ├── migrations/
+        ├── __init__.py
+        ├── admin.py
+        ├── apps.py
+        ├── models.py
+        ├── tests.py
+        └── views.py
+        </pre>
+
+        <h1>Create a new Django project:</h1>
+        <pre>
+    django-admin startproject myproject
+</pre>
+
+        <h1>Create a new Django app:</h1>
+        <pre>
+    cd myproject
+    python manage.py startapp myapp
+</pre>
+
+        <h1>Update myapp/views.py:</h1>
+        <pre>
+    from django.shortcuts import render
+    from django.http import HttpResponse
+
+    def home(request):
+        return HttpResponse("&lt;h1>Welcome to my Django app!&lt;/h1>")
+</pre>
+
+        <h1>Update myapp/urls.py:</h1>
+        <pre>
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('', views.home, name='home'),
+    ]
+</pre>
+
+        <h1>Update myproject/urls.py:</h1>
+        <pre>
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', include('myapp.urls')),
+    ]
+</pre>
+
+        <h1>Run the development server:</h1>
+        <pre>
+    python manage.py runserver
+</pre>
+
+        <p>
+            Now, you can visit <a href="http://localhost:8000/">http://localhost:8000/</a> in your web browser
+            and see the "Welcome to my Django app!" message displayed. This is a basic example to get you started
+            with a Django project.
+        </p>
+        <h6>created by : Sarthak Ranjan Mishra</h6>
+</body>
+
+</html>

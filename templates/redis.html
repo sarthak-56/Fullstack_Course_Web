@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radis</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: purple; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(242, 143, 242);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    <h1>Redis Introduction</h1>
+
+<p>Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It is known for its high performance, flexibility, and support for various data structures.</p>
+
+<p>Key features of Redis include:</p>
+
+<ul>
+  <li><strong>Speed:</strong> Redis is incredibly fast, capable of handling millions of requests per second.</li>
+  <li><strong>Data Structures:</strong> Redis supports various data structures such as strings, hashes, lists, sets, and sorted sets, allowing for versatile data modeling.</li>
+  <li><strong>Persistence:</strong> Redis can be configured to persist data to disk, ensuring data durability.</li>
+  <li><strong>Replication:</strong> Redis supports master-slave replication, allowing for high availability and read scalability.</li>
+  <li><strong>Pub/Sub Messaging:</strong> Redis includes publish/subscribe messaging capabilities, making it suitable for building real-time applications.</li>
+  <li><strong>Transactions:</strong> Redis supports transactions, allowing multiple commands to be executed atomically.</li>
+  <li><strong>Scripting:</strong> Redis has a built-in Lua scripting engine, enabling complex operations to be executed server-side.</li>
+</ul>
+
+<p>Redis is commonly used for caching, real-time analytics, messaging, and job queue management. Its versatility and performance make it a popular choice for a wide range of use cases.</p>
+
+Redis can be installed on various operating systems. Here's a general outline of the installation process:
+
+<h1>Redis Installation</h1>
+
+<p><strong>1. Download Redis:</strong> Visit the <a href="https://redis.io/download" target="_blank" rel="noopener noreferrer">Redis download page</a> and download the latest stable release of Redis.</p>
+
+<p><strong>2. Extract the tarball:</strong> Once downloaded, extract the Redis tarball to a directory of your choice.</p>
+
+<pre>tar xvzf redis-x.y.z.tar.gz
+cd redis-x.y.z
+</pre>
+
+<p><strong>3. Compile Redis:</strong> Use the make command to compile Redis.</p>
+
+<pre><code>make
+</code></pre>
+
+<p><strong>4. Install Redis:</strong> Optionally, you can install Redis to your system by running the following command:</p>
+
+<pre><code>make install
+</code></pre>
+
+<p><strong>5. Configure Redis:</strong> Redis comes with a default configuration file. You can use it as is or customize it to suit your needs.</p>
+
+<p><strong>6. Start Redis:</strong> You can start the Redis server using the following command:</p>
+
+<pre><code>redis-server /path/to/redis.conf
+</code></pre>
+
+<p><strong>7. Verify Installation:</strong> You can verify that Redis is running using the redis-cli tool:</p>
+
+<pre><code>redis-cli ping
+</code></pre>
+
+<p>If Redis is running, it will return "PONG".</p>
+
+<p><strong>8. Additional Configuration (Optional):</strong> You may need to configure Redis to start automatically on system boot and set up security measures such as firewall rules and authentication.</p>
+
+<p>That's it! You now have Redis installed and running on your system.</p>
+<h1>Redis Benefits</h1>
+
+<p>Redis offers several benefits that make it a popular choice for developers and organizations:</p>
+
+<ul>
+  <li><strong>Speed:</strong> Redis is incredibly fast, with performance comparable to in-memory databases, making it ideal for use cases that require low latency.</li>
+  <li><strong>Flexibility:</strong> Redis supports a variety of data structures, including strings, hashes, lists, sets, and sorted sets, allowing for versatile data modeling.</li>
+  <li><strong>Scalability:</strong> Redis supports clustering and replication, allowing you to scale your Redis deployment horizontally for increased capacity and availability.</li>
+  <li><strong>High Availability:</strong> Redis supports master-slave replication and automatic failover, ensuring high availability of your data and services.</li>
+  <li><strong>Persistence:</strong> Redis can be configured to persist data to disk, providing durability and the ability to recover data in case of failures.</li>
+  <li><strong>Pub/Sub Messaging:</strong> Redis includes publish/subscribe messaging capabilities, making it suitable for building real-time applications and event-driven architectures.</li>
+  <li><strong>Atomic Operations:</strong> Redis supports atomic operations on its data structures, allowing you to perform complex operations safely and efficiently.</li>
+  <li><strong>Scripting:</strong> Redis has a built-in Lua scripting engine, enabling you to perform complex operations and transactions server-side.</li>
+</ul>
+
+<p>Overall, Redis is a powerful and versatile tool that can be used for a wide range of use cases, from caching and session management to real-time analytics and message queuing.</p>
+
+Redis is a key-value store and does not have tables in the traditional relational database sense. Instead, it stores data as key-value pairs. Here's how you can create and delete keys in Redis:
+
+<h1>Creating and Deleting Keys in Redis</h1>
+
+<p>To set a key-value pair in Redis, you can use the `SET` command:</p>
+
+<pre>
+SET key value
+</pre>
+
+<p>For example:</p>
+
+<pre>
+SET mykey "Hello Redis"
+</pre>
+
+<p>To retrieve the value of a key, you can use the `GET` command:</p>
+
+<pre>
+GET mykey
+</pre>
+
+<p>To delete a key, you can use the `DEL` command:</p>
+
+<pre>
+DEL mykey
+</pre>
+
+<p>Redis does not have a concept of tables like traditional databases, as it stores data as key-value pairs or in other specialized data structures. Keys can be strings, and values can be strings, hashes, lists, sets, sorted sets, or other data structures supported by Redis.</p>
+
+<ul>
+    <li>
+      <p><strong>Strings:</strong> Used to store text or binary data, with operations for appending, incrementing/decrementing numbers, and more.</p>
+    </li>
+    <li>
+      <p><strong>Lists:</strong> Ordered collections of strings, with operations to push/pop elements from either end of the list.</p>
+    </li>
+    <li>
+      <p><strong>Sets:</strong> Unordered collections of unique strings, with operations for adding, removing, and checking for existence of members.</p>
+    </li>
+    <li>
+      <p><strong>Sorted Sets:</strong> Similar to sets, but each member has an associated score used for ordering the set.</p>
+    </li>
+    <li>
+      <p><strong>Hashes:</strong> Maps between string fields and string values, with operations for adding, removing, and retrieving fields.</p>
+    </li>
+    <li>
+      <p><strong>Bitmaps:</strong> Used to store and manipulate bitmaps, with operations for setting, clearing, and counting bits.</p>
+    </li>
+    <li>
+      <p><strong>HyperLogLogs:</strong> Used to estimate the cardinality of a set, with operations for adding elements and calculating the cardinality.</p>
+    </li>
+  </ul>
+
+  <h1>Redis Query Structure</h1>
+<pre>
+Redis uses a simple, yet powerful, command-based query structure. 
+Each Redis command is a single line of text consisting of the command name,
+ followed by arguments. The general structure of a Redis command is:
+
+COMMAND_NAME ARGUMENTS
+
+For example, to set a key to a specific value, the command would be:
+
+SET mykey "Hello Redis"
+
+Here, SET is the command name, mykey is the key, and "Hello Redis" is the value.
+
+Redis commands are case-insensitive, so SET and set are equivalent. Arguments 
+are separated by spaces, and if an argument contains spaces, it should be enclosed in quotes.
+
+Redis commands are sent to the Redis server over a TCP connection using a client 
+library or a Redis command-line interface (CLI). The server processes the command 
+and sends a response back to the client.
+</pre>
+
+<h1>Redis Database Configuration</h1>
+
+<ul>
+  <li><strong>Binding and Port:</strong> Specify the IP address and port number on which Redis should listen for connections. Example: <code>bind 127.0.0.1</code> and <code>port 6379</code>.</li>
+  <li><strong>Logging:</strong> Configure logging settings such as the log file path and verbosity level. Example: <code>logfile /var/log/redis/redis-server.log</code> and <code>loglevel notice</code>.</li>
+  <li><strong>Persistence:</strong> Choose between RDB (snapshotting) and AOF (append-only file) for persistence. Set the file paths and frequencies. Example: <code>save 900 1</code> (save every 900 seconds if at least 1 key changed) and <code>appendonly yes</code>.</li>
+  <li><strong>Security:</strong> Set a password for server authentication. Example: <code>requirepass your_password</code>.</li>
+  <li><strong>Memory Management:</strong> Configure memory usage settings such as maximum memory limit and eviction policies. Example: <code>maxmemory 1GB</code> and <code>maxmemory-policy allkeys-lru</code>.</li>
+  <li><strong>Replication:</strong> Configure replication settings for master-slave replication. Example: <code>slaveof master_ip master_port</code>.</li>
+  <li><strong>Cluster:</strong> For Redis Cluster, configure cluster settings such as <code>cluster-enabled yes</code> and <code>cluster-node-timeout</code>.</li>
+  <li><strong>Other:</strong> Set other configurations like the number of databases, max clients, timeout settings, etc.</li>
+</ul>
+
+<p>After modifying the <code>redis.conf</code> file, restart the Redis server for the changes to take effect.</p>
+
+<h1>Redis Storage</h1>
+
+<ul>
+  <li><strong>In-Memory Data Store:</strong> Redis stores data in memory, allowing for fast read and write operations.</li>
+  <li><strong>Persistence:</strong> Redis can be configured to periodically save data to disk (RDB snapshotting) or append changes to a log file (AOF).</li>
+  <li><strong>Eviction Policies:</strong> Redis offers eviction policies (e.g., LRU, LFU) to remove older or less frequently used keys when memory is full.</li>
+  <li><strong>Memory Management:</strong> Redis provides commands to manage memory usage, such as <code>MEMORY USAGE</code> and <code>MEMORY PURGE</code>.</li>
+  <li><strong>Partitioning:</strong> Redis supports partitioning data across multiple instances to store more data than would fit in a single instance's memory.</li>
+</ul>
+
+<p>Overall, Redis offers mechanisms to effectively manage and store data, making it suitable for various use cases requiring high performance and low latency.</p>
+
+
+</body>
+</html>

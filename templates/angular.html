@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: red; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(250, 136, 136);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+   </style>
+</head>
+
+<body>
+    
+    <h1>Angular Content</h1>
+    <hr>
+    <p>Angular, a powerful front-end framework developed by Google, revolutionizes the way web applications are built
+        and maintained. At its core, Angular facilitates the creation of dynamic, single-page applications (SPAs) with
+        ease and efficiency. A comprehensive exploration of Angular in a course typically begins with understanding its
+        architecture, including components, modules, services, and dependency injection. Students dive into the
+        TypeScript language, which forms the backbone of Angular development, enabling strong typing, interfaces, and
+        other modern features that enhance code readability and maintainability.</p>
+
+    <p>As the course progresses, students delve into the concept of data binding, a cornerstone of Angular development
+        that seamlessly synchronizes the application's data model with the user interface. They learn about various
+        types of data binding, including interpolation, property binding, event binding, and two-way binding, empowering
+        them to create dynamic and responsive user experiences.</p>
+
+    <p>Routing is another vital aspect covered in an Angular course, enabling students to implement navigation within
+        their applications effortlessly. They learn to configure routes, handle route parameters, and guard routes to
+        control access based on authentication and authorization.</p>
+
+    <p>Angular's powerful features extend to its support for reactive programming and state management. Through the RxJS
+        library and Angular's built-in support for observables, students gain the ability to manage asynchronous data
+        streams efficiently, facilitating responsive and scalable applications. They also explore state management
+        techniques using libraries like NgRx, which employ principles inspired by Redux to manage application state in a
+        predictable and maintainable manner.</p>
+
+    <p>In addition to mastering the core concepts, students in an Angular course often engage in hands-on projects and
+        exercises to solidify their understanding. They build real-world applications, ranging from simple CRUD (Create,
+        Read, Update, Delete) interfaces to more complex applications with authentication, data fetching from APIs, and
+        advanced user interactions.</p>
+
+    <p>Furthermore, as the Angular ecosystem continues to evolve rapidly, a comprehensive course may touch upon advanced
+        topics such as server-side rendering, progressive web apps (PWAs), internationalization (i18n), and performance
+        optimization strategies.</p>
+
+    <p>By the end of an Angular course, students emerge equipped with the knowledge and skills to design, develop, and
+        deploy robust and feature-rich web applications that leverage the full potential of Angular's capabilities. They
+        become adept at navigating the intricacies of front-end development and are well-prepared to tackle the
+        challenges of building modern web applications in today's dynamic digital landscape.</p>
+
+
+    <h1>Folder Structure</h1>
+    <p>For an Angular project, the folder structure typically follows Angular's recommended best practices. Here's a
+        basic outline of the folder structure for an Angular project:</p>
+    <pre>
+angular-project/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── component1/
+│   │   │   │   ├── component1.component.html
+│   │   │   │   ├── component1.component.ts
+│   │   │   │   └── component1.component.css
+│   │   │   │
+│   │   │   ├── component2/
+│   │   │   │   ├── component2.component.html
+│   │   │   │   ├── component2.component.ts
+│   │   │   │   └── component2.component.css
+│   │   │   │
+│   │   │   └── ...
+│   │   │
+│   │   ├── services/
+│   │   │   ├── service1.service.ts
+│   │   │   ├── service2.service.ts
+│   │   │   └── ...
+│   │   │
+│   │   ├── models/
+│   │   │   ├── model1.model.ts
+│   │   │   ├── model2.model.ts
+│   │   │   └── ...
+│   │   │
+│   │   ├── modules/
+│   │   │   ├── module1/
+│   │   │   │   ├── module1.component.ts
+│   │   │   │   ├── module1.module.ts
+│   │   │   │   └── ...
+│   │   │   │
+│   │   │   ├── module2/
+│   │   │   │   ├── module2.component.ts
+│   │   │   │   ├── module2.module.ts
+│   │   │   │   └── ...
+│   │   │   │
+│   │   │   └── ...
+│   │   │
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.component.css
+│   │   ├── app.module.ts
+│   │   └── ...
+│   │
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── styles/
+│   │   └── ...
+│   │
+│   ├── environments/
+│   │   ├── environment.prod.ts
+│   │   └── environment.ts
+│   │
+│   ├── index.html
+│   ├── main.ts
+│   └── ...
+│
+├── node_modules/
+├── angular.json
+├── package.json
+└── ...
+</pre>
+
+<h1>Explanation of the main folders and files:</h1>
+
+<p>- **src/**: This is where your project's source code resides.
+    - **app/**: Contains all the components, services, models, modules, and other application-related files.
+      - **components/**: Contains individual components of your application.
+      - **services/**: Contains services used for data manipulation, API calls, etc.
+      - **models/**: Contains TypeScript interfaces or classes representing data models.
+      - **modules/**: Contains feature modules to organize your application into cohesive blocks of functionality.
+      - **app.component.html**: The main HTML template file for the root component of your application.
+      - **app.component.ts**: The TypeScript file for the root component.
+      - **app.module.ts**: The main Angular module where you define your application's dependencies and configurations.
+    - **assets/**: Contains static assets like images, stylesheets, or fonts.
+    - **environments/**: Contains environment-specific configuration files.
+    - **index.html**: The main HTML file that serves as the entry point for your Angular application.
+    - **main.ts**: The main TypeScript file that bootstraps the Angular application.
+  - **node_modules/**: Contains all the npm packages that your project depends on.
+  - **angular.json**: Angular CLI configuration file.
+  - **package.json**: npm package configuration file.
+     </p>
+
+    <h1>What is Angular?</h1>
+    <p>Angular is a popular open-source front-end web framework developed and maintained by Google and a community of
+        developers. It's used for building dynamic and modern web applications. Angular is written in TypeScript, a
+        superset of JavaScript, and offers a comprehensive solution for building single-page client applications.</p>
+
+    <h1>Key Features:</h1>
+    <ol>
+        <li><strong>Component-Based Architecture:</strong> Angular follows a component-based architecture where
+            applications are built by composing reusable and encapsulated components.</li>
+        <li><strong>Two-Way Data Binding:</strong> Angular provides two-way data binding, meaning changes to the model
+            state automatically reflect in the view, and vice versa, without needing explicit DOM manipulation.</li>
+        <li><strong>Dependency Injection:</strong> Angular's dependency injection system allows components to be loosely
+            coupled and promotes modular and reusable code.</li>
+        <li><strong>Directives:</strong> Directives extend HTML with custom attributes and tags, enabling the creation
+            of dynamic and interactive views.</li>
+        <li><strong>Templates:</strong> Angular uses HTML templates to define the UI of an application, which can be
+            enhanced with Angular-specific syntax and directives.</li>
+        <li><strong>Services:</strong> Services in Angular are reusable components that provide specific functionality
+            and can be injected into other components or services.</li>
+        <li><strong>Routing:</strong> Angular's router allows for the creation of single-page applications with multiple
+            views and navigation between them.</li>
+        <li><strong>Forms:</strong> Angular provides robust support for building forms, including template-driven forms
+            and reactive forms, with built-in validation and error handling.</li>
+        <li><strong>HTTP Client:</strong> Angular's built-in HTTP client module simplifies communication with backend
+            servers, making it easy to perform HTTP requests and handle responses.</li>
+    </ol>
+
+    <h1>Angular Architecture:</h1>
+    <ul>
+        <li><strong>Modules:</strong> Angular applications are modular and organized into NgModules, which group related
+            components, directives, pipes, and services.</li>
+        <li><strong>Components:</strong> Components are the building blocks of Angular applications, representing UI
+            elements and encapsulating their behavior and presentation logic.</li>
+        <li><strong>Templates:</strong> Templates define the structure of a component's view using HTML enhanced with
+            Angular directives and binding syntax.</li>
+        <li><strong>Services:</strong> Services encapsulate reusable functionality and provide a way to share data and
+            logic across components.</li>
+        <li><strong>Dependency Injection (DI):</strong> Angular's DI system manages the creation and injection of
+            dependencies into components, making code more modular, testable, and maintainable.</li>
+    </ul>
+
+    <h1>Getting Started:</h1>
+    <ol>
+        <li><strong>Installation:</strong> Install Node.js and npm (Node Package Manager), then install the Angular CLI
+            (Command Line Interface) globally.</li>
+        <li><strong>Create a New Project:</strong> Use the Angular CLI to generate a new Angular project scaffold.</li>
+        <li><strong>Development:</strong> Write components, services, and other application code using TypeScript, HTML,
+            and CSS.</li>
+        <li><strong>Testing:</strong> Write unit tests and end-to-end tests to ensure the correctness and reliability of
+            your application.</li>
+        <li><strong>Building and Deployment:</strong> Build your application for production using the Angular CLI, then
+            deploy it to a web server or hosting platform.</li>
+    </ol>
+
+    <h1>Conclusion:</h1>
+    <p>Angular is a powerful and feature-rich framework for building modern web applications. Its comprehensive set of
+        tools, robust architecture, and strong community support make it a popular choice for developers worldwide. With
+        Angular, you can create scalable, maintainable, and high-performing applications that meet the demands of
+        today's web development landscape.</p>
+
+</body>
+
+</html>

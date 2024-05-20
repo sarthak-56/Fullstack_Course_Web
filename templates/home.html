@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('/static/app1/image/home.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .container {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex: auto;
+    }
+    
+    p {
+        padding: 1vw;
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #333;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    
+    .cta {
+       margin-left: 35vw;
+    }
+    
+    .buttons {
+        margin-top: 20px;
+        margin: 1vw;
+    }
+    
+    button {
+        font-weight: bolder;
+        font-size: 1vw;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        height: 5vh;
+        width: 15vw;
+        margin-right: 10px;
+        border-radius: 5px;
+        justify-content: center;
+    }
+    
+    button:hover {
+        background-color: whitesmoke;
+        color: rgb(6, 163, 202);
+    }
+    
+    @media screen and (max-width: 768px) {
+        .container {
+            margin: 10px;
+        }
+    
+        .cta {
+            margin-left: 20vw;
+        }
+    
+        button {
+            font-size: 5vw;
+            height: 8vh;
+            width: 30vw;
+            font-weight: bold;
+            margin-left: 2vw;
+        }
+    }
+   </style>
+</head>
+<body>
+<div>
+          <div>
+    <p>
+
+        "Unlike all the other books that start at the beginning,at this one
+         wiil get you to the good stuff, fast, jennifer will explain every 
+         step you need, including some very advanced concepts."
+    </p>
+         <div>
+</div>
+      
+
+ <div class="cta">
+    <button onclick="window.location.href = '/signup'">Signup</button>
+    <button onclick="window.location.href = '/login'">Login</button>
+ </div>
+ 
+
+   
+</body>
+</html>

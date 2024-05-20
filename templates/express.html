@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express</title>
+  <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: rgba(0, 102, 255, 1); 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(129, 167, 247);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+  </style>
+</head>
+
+<body>
+  
+  <h1>About Express </h1>
+  <hr>
+  <p>Express is a web application framework for Node.js that provides a robust set of features to develop web and mobile
+    applications. It is designed for building web applications and APIs and is known for its simplicity and flexibility.
+
+    Express simplifies the process of creating web applications in Node.js by providing a high-level API for handling
+    HTTP requests and responses. It allows developers to define routes to handle different URL paths and HTTP methods,
+    making it easy to create RESTful APIs.
+
+    One of the key features of Express is its middleware system, which allows developers to easily add functionality to
+    their applications. Middleware functions can be used to parse incoming requests, authenticate users, log requests,
+    and much more.
+
+    Express also provides support for template engines like EJS and Pug, making it easy to render dynamic HTML content
+    on the server side. Additionally, Express can serve static files like images, CSS, and JavaScript files, making it a
+    versatile framework for building web applications.
+
+    Overall, Express is a popular choice for building web applications in Node.js due to its simplicity, flexibility,
+    and rich feature set. It is widely used in both small-scale projects and large-scale applications.</p>
+  <hr>
+  <h1>Express Overview</h1>
+  <hr>
+  <p>Express is a web application framework for Node.js that provides a robust set of features to develop web and mobile
+    applications. It is designed for building web applications and APIs and is known for its simplicity and flexibility.
+  </p>
+
+  <pre>
+Project Structure:
+1. Folder Structure: Typically, an Express project has a structure similar to this:
+   project/
+   ├── node_modules/       # Dependencies
+   ├── public/             # Static files (images, CSS, etc.)
+   ├── routes/             # Route handlers
+   ├── views/              # Templates (if using server-side rendering)
+   ├── app.js              # Entry point for the application
+   └── package.json        # Project metadata and dependencies
+
+2. Entry Point (app.js): This is where your Express application is created. You import necessary modules,
+ set up middleware, routes, and start the server.
+   const express = require('express');
+   const app = express();
+
+   // Middleware setup
+   // Routes setup
+   // Error handling setup
+
+   app.listen(3000, () => {
+       console.log('Server is running on port 3000');
+   });
+
+3. Middleware: Express uses middleware functions to perform various tasks like parsing incoming requests,
+ logging, etc. Middleware functions have access to the request object (req), the response object (res),
+  and the next middleware function in the application’s request-response cycle.
+   // Example middleware to log requests
+   app.use((req, res, next) => {
+       console.log(`${req.method} ${req.url}`);
+       next();
+   });
+
+4. Routes: Express allows you to define routes to handle different HTTP methods and URLs.
+ Routes are used to direct incoming requests to the appropriate controller functions.
+   // Example route
+   app.get('/', (req, res) => {
+       res.send('Hello World!');
+   });
+
+5. Views (if using server-side rendering): If your application needs to render HTML views on the server side,
+ you can use template engines like EJS or Pug. Views are typically stored in the views directory.
+
+6. Static Files (public): Express can serve static files like images, CSS, and JavaScript 
+files using the express.static middleware.
+   app.use(express.static('public'));
+
+7. Error Handling: Express provides a way to handle errors using middleware functions.
+ You can define error-handling middleware with four arguments (err, req, res, next).
+   // Example error handling middleware
+   app.use((err, req, res, next) => {
+       console.error(err.stack);
+       res.status(500).send('Something broke!');
+   });
+</pre>
+  <hr>
+  <h1>Express Database Connection</h1>
+  <hr>
+  <p>To connect an Express application to a database, follow these steps:</p>
+
+  <ol>
+    <li>Install the database driver package. For MongoDB, you can use Mongoose:</li>
+  </ol>
+
+  <pre>npm install mongoose</pre>
+
+  <ol start="2">
+    <li>Import the necessary modules and connect to the database in your Express application:</li>
+  </ol>
+
+  <pre><code>const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+
+mongoose.connect('mongodb://localhost/mydatabase', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => {
+    console.log('Connected to MongoDB');
+})
+.catch((err) => {
+    console.error('Error connecting to MongoDB:', err.message);
+    process.exit(1);
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+});
+</code></pre>
+
+  <ol start="3">
+    <li>Replace <code>'mongodb://localhost/mydatabase'</code> with the connection URL for your MongoDB database.</li>
+    <li>Use <code>mongoose</code> models to interact with your database. For example, to define a <code>User</code>
+      model and save a new user to the database:</li>
+  </ol>
+
+  <pre><code>const { Schema } = mongoose;
+
+const userSchema = new Schema({
+    name: String,
+    email: String
+});
+
+const User = mongoose.model('User', userSchema);
+
+const newUser = new User({
+    name: 'John Doe',
+    email: 'john.doe@example.com'
+});
+
+newUser.save()
+    .then(() => {
+        console.log('User saved');
+    })
+    .catch((err) => {
+        console.error('Error saving user:', err.message);
+    });
+</code></pre>
+
+  <p>This is a basic example of connecting an Express application to a MongoDB database using <code>mongoose</code>.
+    Depending on your database type (e.g., MySQL, PostgreSQL), the connection and usage might vary, but the general
+    approach is similar: establish a connection using a database driver and interact with the database using models or
+    queries.</p>
+  <hr>
+  <h1>Install required packages:</h1>
+  <hr>
+  <pre>
+    npm install express passport passport-local express-session
+</pre>
+  <hr>
+  <h1>Create an Express app:</h1>
+  <hr>
+  <pre>
+    const express = require('express');
+    const passport = require('passport');
+    const LocalStrategy = require('passport-local').Strategy;
+    const session = require('express-session');
+
+    // Middleware and routes here...
+</pre>
+  <hr>
+  <h1>Define a mock user database:</h1>
+  <hr>
+  <pre>
+    const users = [
+      { id: 1, username: 'user1', password: 'password1' },
+      { id: 2, username: 'user2', password: 'password2' }
+    ];
+</pre>
+  <hr>
+  <h1>Configure Passport local strategy:</h1>
+  <hr>
+  <pre>
+    passport.use(new LocalStrategy((username, password, done) => {
+      const user = users.find(u => u.username === username && u.password === password);
+      if (user) {
+        return done(null, user);
+      } else {
+        return done(null, false, { message: 'Incorrect username or password' });
+      }
+    }));
+
+    passport.serializeUser((user, done) => {
+      done(null, user.id);
+    });
+
+    passport.deserializeUser((id, done) => {
+      const user = users.find(u => u.id === id);
+      done(null, user);
+    });
+</pre>
+  <hr>
+  <h1>Define routes:</h1>
+  <hr>
+  <pre>
+    app.get('/', (req, res) => {
+      res.send('Home Page');
+    });
+
+    // Login route
+    app.get('/login', (req, res) => {
+      res.send('Login Page');
+    });
+
+    app.post('/login', passport.authenticate('local', {
+      successRedirect: '/dashboard',
+      failureRedirect: '/login',
+      failureFlash: true
+    }));
+
+    // Dashboard route
+    app.get('/dashboard', isAuthenticated, (req, res) => {
+      res.send('Dashboard Page');
+    });
+
+    // Check if user is authenticated
+    function isAuthenticated(req, res, next) {
+      if (req.isAuthenticated()) {
+        return next();
+      }
+      res.redirect('/login');
+    }
+</pre>
+  <hr>
+  <h1>Start the server:</h1>
+  <hr>
+  <pre>
+    const PORT = 3000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+</pre>
+  <h6>created by : Sarthak Ranjan Mishra</h6>
+</body>
+
+</html>

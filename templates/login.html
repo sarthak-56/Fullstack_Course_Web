@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <style>
+        /* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/app1/image/login&signup.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+
+.message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: blue 0.1px solid;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-link {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    background-color: #5a6268;
+}
+
+h1{
+    text-align: center;
+    color: whitesmoke;
+}
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <hr>
+        <h1>Login</h1>
+        <hr>
+        
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+    
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="input-field" type="text" name="username" required><br>
+            </div>
+           
+             
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="input-field" type="password" name="password" required><br> 
+            </div>
+           
+            <div class="form-group">
+                <button class="submit-btn" type="submit">Login</button>
+            </div>
+            
+            <div class="form-group">
+                <a href="{% url 'signup' %}" class="login-link">I have no account</a>
+            </div>
+           
+        </form>
+    </div>
+    
+</body>
+</html>
+
+   
+ 

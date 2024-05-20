@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MariaDB</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: purple; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(242, 143, 242);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    <h1>MariaDB Introduction</h1>
+
+<p>MariaDB is an open-source relational database management system (RDBMS) that was forked from MySQL. It is developed and maintained by the original creators of MySQL, with the intention of ensuring that the community-developed version of MySQL remains free and open-source.</p>
+
+<p>MariaDB aims to be highly compatible with MySQL, ensuring that existing MySQL databases and applications can easily transition to MariaDB. However, MariaDB also includes additional features and performance improvements over MySQL, making it a popular choice for many developers and organizations.</p>
+
+<p>Some key features of MariaDB include:</p>
+
+<ul>
+  <li><strong>Compatibility:</strong> MariaDB is designed to be highly compatible with MySQL, allowing for easy migration from MySQL to MariaDB.</li>
+  <li><strong>Performance:</strong> MariaDB includes several performance improvements over MySQL, such as enhanced query optimizer and storage engines.</li>
+  <li><strong>Features:</strong> MariaDB includes additional features not found in MySQL, such as the Aria storage engine, thread pool, and improved replication.</li>
+  <li><strong>Community Support:</strong> MariaDB has a strong community of developers and users who contribute to its development and provide support.</li>
+  <li><strong>Open Source:</strong> MariaDB is released under the GNU General Public License (GPL), ensuring that it remains free and open-source.</li>
+</ul>
+
+<h1>MariaDB Installation</h1>
+<p><strong>Download MariaDB:</strong> Visit the <a href="https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.3.2&os=windows&cpu=x86_64&pkg=msi&mirror=aliyun" target="_blank" rel="noopener noreferrer">PostgreSQL download page</a> and select the appropriate distribution for your operating system.</p>
+<p><strong>1. Update Package Index:</strong> Before installing MariaDB, it's a good idea to update the package index on your server:</p>
+
+<pre><code>sudo apt update
+</code></pre>
+
+<p><strong>2. Install MariaDB:</strong> You can install MariaDB using the following command:</p>
+
+<pre><code>sudo apt install mariadb-server
+</code></pre>
+
+<p><strong>3. Start MariaDB Server:</strong> After installation, start the MariaDB server using the following command:</p>
+
+<pre><code>sudo systemctl start mariadb
+</code></pre>
+
+<p><strong>4. Secure MariaDB Installation:</strong> Run the MariaDB security script to set a root password, remove anonymous users, and disable remote root login:</p>
+
+<pre><code>sudo mysql_secure_installation
+</code></pre>
+
+<p><strong>5. Access MariaDB:</strong> You can access the MariaDB shell using the following command:</p>
+
+<pre><code>sudo mysql -u root -p
+</code></pre>
+
+<p>Enter the root password when prompted. You should now be able to access the MariaDB shell.</p>
+
+<p><strong>6. Additional Configuration (Optional):</strong> You may need to configure MariaDB to start automatically on system boot, adjust server settings in the MariaDB configuration file (e.g., my.cnf), and create additional MariaDB users and databases as needed.</p>
+
+<p>That's it! You now have MariaDB installed and running on your system.</p>
+<p>Overall, MariaDB is a powerful and feature-rich database management system that is well-suited for a wide range of applications, from small-scale applications to large-scale enterprise systems.</p>
+
+<h1>MariaDB Benefits</h1>
+
+<p>MariaDB offers several benefits that make it a popular choice for many developers and organizations:</p>
+
+<ul>
+  <li><strong>Compatibility:</strong> MariaDB is highly compatible with MySQL, making it easy to migrate existing MySQL databases and applications to MariaDB.</li>
+  <li><strong>Performance:</strong> MariaDB includes several performance improvements over MySQL, such as a faster query optimizer and enhanced storage engines, leading to better overall performance.</li>
+  <li><strong>Features:</strong> MariaDB includes additional features not found in MySQL, such as the Aria storage engine, thread pool, and improved replication, providing more flexibility and functionality.</li>
+  <li><strong>Community Support:</strong> MariaDB has a strong community of developers and users who contribute to its development and provide support, ensuring that users have access to resources and assistance.</li>
+  <li><strong>Open Source:</strong> MariaDB is released under the GNU General Public License (GPL), ensuring that it remains free and open-source, making it accessible to everyone.</li>
+  <li><strong>Security:</strong> MariaDB includes several security features, such as encryption support, secure connections, and user authentication enhancements, helping to protect data from unauthorized access.</li>
+  <li><strong>Scalability:</strong> MariaDB is designed to be highly scalable, allowing users to easily scale their databases as their needs grow, making it suitable for both small-scale and large-scale applications.</li>
+</ul>
+
+<p>Overall, MariaDB offers a compelling set of features and benefits that make it a strong alternative to MySQL and other relational database management systems.</p>
+
+<h1>MariaDB Security</h1>
+
+<p>Ensuring the security of your MariaDB database is crucial to protect your data from unauthorized access and other security threats. MariaDB offers several security features and best practices to help you secure your database:</p>
+
+<ul>
+  <li><strong>User Authentication:</strong> Use strong passwords and limit access to your database by granting only the necessary privileges to each user.</li>
+  <li><strong>Encryption:</strong> Enable encryption for data in transit and at rest to protect sensitive data from being intercepted or accessed by unauthorized users.</li>
+  <li><strong>Access Controls:</strong> Use firewall rules and access controls to restrict access to your database server to trusted IP addresses or networks.</li>
+  <li><strong>Auditing:</strong> Enable auditing to track and log database activity, including logins, queries, and other operations, to detect and respond to suspicious behavior.</li>
+  <li><strong>Updates and Patches:</strong> Regularly update MariaDB and its dependencies to protect against security vulnerabilities and apply patches as soon as they are available.</li>
+  <li><strong>Backup and Recovery:</strong> Implement regular backups and test your backup and recovery procedures to ensure that you can recover your data in case of data loss or corruption.</li>
+  <li><strong>Secure Connections:</strong> Use SSL/TLS to encrypt connections between your applications and the MariaDB server to protect data from being intercepted during transmission.</li>
+  <li><strong>Parameterized Queries:</strong> Use parameterized queries or prepared statements to prevent SQL injection attacks.</li>
+</ul>
+
+<p>By following these security best practices and implementing the appropriate security measures, you can help protect your MariaDB database from security threats and ensure the integrity and confidentiality of your data.</p>
+
+
+<h1>MariaDB Create Table</h1>
+
+<p>To create a table in MariaDB, you can use the following syntax:</p>
+
+<pre>
+CREATE TABLE table_name (
+    column1_name column1_datatype,
+    column2_name column2_datatype,
+    ...
+);
+</pre>
+
+<p>Replace <code>table_name</code>, <code>column1_name</code>, <code>column2_name</code>, etc., with your desired table name and column names and data types.</p>
+
+<h1>MariaDB Delete</h1>
+
+<p>To delete data from a table in MariaDB, you can use the following syntax:</p>
+
+<pre>
+DELETE FROM table_name WHERE condition;
+</pre>
+
+<p>Replace <code>table_name</code> with the name of the table from which you want to delete data, and <code>condition</code> with the condition that specifies which rows to delete. If you omit the <code>WHERE</code> clause, all rows in the table will be deleted.</p>
+
+<h1>MariaDB Update</h1>
+
+<p>To update data in a table in MariaDB, you can use the following syntax:</p>
+
+<pre>
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+</pre>
+
+<p>Replace <code>table_name</code> with the name of the table you want to update, <code>column1</code>, <code>column2</code>, etc., with the columns you want to update, <code>value1</code>, <code>value2</code>, etc., with the new values you want to set, and <code>condition</code> with the condition that specifies which rows to update.</p>
+
+
+<h1>MariaDB Operators</h1>
+
+<p>In MariaDB, operators are used to perform operations on values or expressions. Here are some common operators in MariaDB:</p>
+
+<ul>
+  <li><strong>Arithmetic Operators:</strong> Used to perform arithmetic operations.
+    <ul>
+      <li><strong>+</strong> (Addition)</li>
+      <li><strong>-</strong> (Subtraction)</li>
+      <li><strong>*</strong> (Multiplication)</li>
+      <li><strong>/</strong> (Division)</li>
+      <li><strong>%</strong> (Modulus)</li>
+    </ul>
+  </li>
+  <li><strong>Comparison Operators:</strong> Used to compare two values or expressions.
+    <ul>
+      <li><strong>=</strong> (Equal to)</li>
+      <li><strong>!=</strong> or <strong>&lt;&gt;</strong> (Not equal to)</li>
+      <li><strong>&lt;</strong> (Less than)</li>
+      <li><strong>&gt;</strong> (Greater than)</li>
+      <li><strong>&lt;=</strong> (Less than or equal to)</li>
+      <li><strong>&gt;=</strong> (Greater than or equal to)</li>
+    </ul>
+  </li>
+  <li><strong>Logical Operators:</strong> Used to combine conditions.
+    <ul>
+      <li><strong>AND</strong> (Logical AND)</li>
+      <li><strong>OR</strong> (Logical OR)</li>
+      <li><strong>NOT</strong> (Logical NOT)</li>
+    </ul>
+  </li>
+  <li><strong>Assignment Operators:</strong> Used to assign values to variables.
+    <ul>
+      <li><strong>=</strong> (Assignment)</li>
+    </ul>
+  </li>
+  <li><strong>Bitwise Operators:</strong> Used to perform bitwise operations.
+    <ul>
+      <li><strong>&</strong> (Bitwise AND)</li>
+      <li><strong>|</strong> (Bitwise OR)</li>
+      <li><strong>^</strong> (Bitwise XOR)</li>
+      <li><strong>~</strong> (Bitwise NOT)</li>
+      <li><strong>&lt;&lt;</strong> (Left shift)</li>
+      <li><strong>&gt;&gt;</strong> (Right shift)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1>MariaDB Clause</h1>
+
+<p>In MariaDB, a clause is a part of a SQL statement that defines certain conditions or actions. Here are some common clauses used in MariaDB:</p>
+
+<ul>
+  <li><strong>SELECT Clause:</strong> Used to select data from a database.
+    <ul>
+      <li><strong>SELECT column1, column2, ... FROM table_name;</strong></li>
+    </ul>
+  </li>
+  <li><strong>WHERE Clause:</strong> Used to filter records.
+    <ul>
+      <li><strong>SELECT * FROM table_name WHERE condition;</strong></li>
+    </ul>
+  </li>
+  <li><strong>ORDER BY Clause:</strong> Used to sort the result set.
+    <ul>
+      <li><strong>SELECT * FROM table_name ORDER BY column_name ASC|DESC;</strong></li>
+    </ul>
+  </li>
+  <li><strong>GROUP BY Clause:</strong> Used to group rows that have the same values.
+    <ul>
+      <li><strong>SELECT column1, COUNT(*) FROM table_name GROUP BY column1;</strong></li>
+    </ul>
+  </li>
+  <li><strong>HAVING Clause:</strong> Used to filter groups.
+    <ul>
+      <li><strong>SELECT column1, COUNT(*) FROM table_name GROUP BY column1 HAVING COUNT(*) &gt; 1;</strong></li>
+    </ul>
+  </li>
+</ul>
+
+
+<h1>MariaDB Database Configuration</h1>
+
+<p>Configuring MariaDB involves setting various parameters and options to optimize the database performance, security, and functionality. Here are some common aspects of MariaDB database configuration:</p>
+
+<ul>
+  <li><strong>Configuration Files:</strong> MariaDB uses configuration files (e.g., <code>my.cnf</code> on Linux, <code>my.ini</code> on Windows) to manage settings. These files are typically located in the MariaDB installation directory or system configuration directory.</li>
+  <li><strong>Database Settings:</strong> Configuration files include settings for the database engine, storage engines (e.g., InnoDB, MyISAM), buffer sizes, thread settings, and other database-specific options.</li>
+  <li><strong>Security Settings:</strong> Configuration includes options for setting the root password, enabling/disabling remote access, and configuring user privileges and permissions.</li>
+  <li><strong>Logging:</strong> MariaDB can log various types of information, including errors, queries, and general activity. Configuration includes setting the log file path, log format, and log verbosity.</li>
+  <li><strong>Character Encoding:</strong> MariaDB supports different character sets and collations. Configuration includes setting the default character set for the server and databases.</li>
+  <li><strong>Performance Tuning:</strong> Configuration includes settings for optimizing performance, such as query cache size, key buffer size, and <code>innodb_buffer_pool_size</code> for InnoDB.</li>
+  <li><strong>Network Configuration:</strong> Settings for configuring MariaDB to listen on specific IP addresses, ports, and controlling client access.</li>
+  <li><strong>Replication Configuration:</strong> For setting up and configuring replication, including master/slave settings, binary logging, and replication filters.</li>
+  <li><strong>Backup and Recovery Configuration:</strong> Configuration includes settings for managing backups, such as enabling/disabling backups, setting backup frequency, and specifying backup storage locations.</li>
+  <li><strong>Storage Configuration:</strong> For configuring storage options such as data directory location, file-per-table settings, and storage engine-specific settings.</li>
+</ul>
+
+<p>It's important to carefully review and test configuration changes, as incorrect settings can lead to database downtime or performance issues. Restarting the MariaDB server is often required for configuration changes to take effect.</p>
+
+<h1>Conclusion</h1>
+<p>MariaDB is a robust and popular relational database management system known for its performance, security, and compatibility with MySQL. It offers several benefits over MySQL, including additional features and improvements in performance and scalability.</p>
+<p>When working with MariaDB, it's essential to understand its operators, clauses, and configuration options to effectively manage and query your database. Security is also a critical aspect, and best practices should be followed to protect your data from unauthorized access and other threats.</p>
+<p>By leveraging the strengths of MariaDB and implementing best practices, you can build reliable and secure database applications that meet your performance and scalability requirements.</p>
+</body>
+</html>

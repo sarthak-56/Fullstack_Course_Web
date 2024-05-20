@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Boot</title>
+   <style>
+    /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: rgba(0, 102, 255, 1); 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(129, 167, 247);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: rgba(0, 102, 255, 1); 
+        font-size: 5vw;
+    }
+    
+}
+   </style>
+</head>
+
+<body>
+    <hr>
+    <h1>Spring Boot Overview</h1>
+    <hr>
+
+    <p>Spring Boot is an open-source Java-based framework used to create standalone, production-grade Spring-based
+        Applications. It aims to make it easy to create Spring-powered, production-grade applications and services with
+        minimum fuss. It is widely used for building web applications, microservices, and APIs.</p>
+    <hr>
+    <h1>Key Features</h1>
+    <hr>
+
+    <ol>
+        <li><strong>Auto-configuration:</strong> Spring Boot automatically configures your application based on the JAR
+            dependencies you have added to the project.</li>
+        <li><strong>Standalone:</strong> Spring Boot applications are standalone and do not require a separate
+            application server, as they embed an embedded server (like Tomcat, Jetty, or Undertow).</li>
+        <li><strong>Convention over Configuration:</strong> Spring Boot follows the principle of "convention over
+            configuration," providing sensible defaults and reducing the need for manual configuration.</li>
+        <li><strong>Spring Boot Starter:</strong> Provides a set of starter dependencies that simplify the inclusion of
+            common dependencies required for various types of applications.</li>
+        <li><strong>Spring Boot Actuator:</strong> Provides production-ready features to help you monitor and manage
+            your application, including metrics, health checks, and more.</li>
+        <li><strong>Spring Boot DevTools:</strong> Provides tools to improve the development experience, including
+            automatic application restarts, live reload of changes, and more.</li>
+        <li><strong>Embedded Server Support:</strong> Allows embedding servlet containers like Tomcat, Jetty, or
+            Undertow directly into your application.</li>
+        <li><strong>Spring Boot CLI:</strong> Command Line Interface (CLI) allows you to quickly prototype and develop
+            Spring Boot applications using a command-line interface.</li>
+        <li><strong>Spring Boot Security:</strong> Provides comprehensive security features, including authentication,
+            authorization, and protection against common security vulnerabilities.</li>
+    </ol>
+
+    <p>Overall, Spring Boot simplifies the process of building and deploying Spring applications, making it a popular
+        choice for Java developers.</p>
+
+    <hr>
+    <h1>Spring Boot Project Overview</h1>
+    <hr>
+    <p>A Spring Boot project follows a structured approach to organize its components and configuration. Here's an
+        overview of a typical Spring Boot project structure and key components:</p>
+    <hr>
+    <h1>Folder Structure</h1>
+    <hr>
+    <pre>
+src/
+├── main/
+│   ├── java/                  # Java source files
+│   │   └── com.example.demo/  # Package for Java classes
+│   │       ├── controller/    # Controllers for handling web requests
+│   │       ├── model/         # Model classes for data entities
+│   │       ├── repository/    # Data access layer interfaces
+│   │       └── service/       # Service classes for business logic
+│   ├── resources/             # Resource files
+│   │   ├── static/            # Static resources (e.g., CSS, JavaScript)
+│   │   ├── templates/         # HTML templates (e.g., Thymeleaf, FreeMarker)
+│   │   └── application.properties  # Application configuration properties
+├── test/                      # Test source files
+└── pom.xml                    # Maven build configuration
+</pre>
+    <hr>
+    <h1>Application Class</h1>
+    <hr>
+    <pre><code>package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class DemoApplication {
+   public static void main(String[] args) {
+       SpringApplication.run(DemoApplication.class, args);
+   }
+}
+</code></pre>
+    <hr>
+    <h1>Controller</h1>
+    <hr>
+    <pre><code>package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+
+   @GetMapping("/hello")
+   public String hello() {
+       return "Hello, World!";
+   }
+}
+</code></pre>
+    <hr>
+    <h1>Model</h1>
+    <hr>
+    <pre><code>package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+
+   @Id
+   private Long id;
+   private String name;
+   private String email;
+
+   // Getters and setters
+}
+</code></pre>
+    <hr>
+    <h1>Repository</h1>
+    <hr>
+    <pre><code>package com.example.demo.repository;
+
+import com.example.demo.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+}
+</code></pre>
+    <hr>
+    <h1>Service</h1>
+    <hr>
+    <pre><code>package com.example.demo.service;
+
+import com.example.demo.model.User;
+import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+   @Autowired
+   private UserRepository userRepository;
+
+   public User getUserById(Long id) {
+       return userRepository.findById(id).orElse(null);
+   }
+}
+</code></pre>
+
+    <p>This is a basic overview of a typical Spring Boot project structure and key components. The actual structure and
+        components may vary based on the project's requirements and complexity.</p>
+
+    <hr>
+    <h1>Spring Boot Database Connection</h1>
+    <hr>
+    <p>In a Spring Boot application, you can configure the database connection using properties in the
+        <code>application.properties</code> or <code>application.yml</code> file. Here's how you can set up a MySQL
+        database connection:</p>
+    <hr>
+    <h1>1. Add MySQL Dependency</h1>
+    <hr>
+    <p>Include the MySQL connector dependency in your <code>pom.xml</code> if you're using Maven:</p>
+    <pre><code>&lt;dependency&gt;
+   &lt;groupId&gt;mysql&lt;/groupId&gt;
+   &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+    <p>Or if you're using Gradle, add the dependency in your <code>build.gradle</code>:</p>
+    <pre><code>implementation 'mysql:mysql-connector-java'</code></pre>
+
+    <h1>2. Configure Database Connection</h1>
+    <p>In your <code>application.properties</code> or <code>application.yml</code>, specify the database connection
+        properties:</p>
+
+    <p>Using <code>application.properties</code>:</p>
+    <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+spring.datasource.username=your_database_username
+spring.datasource.password=your_database_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+</code></pre>
+
+    <p>Using <code>application.yml</code>:</p>
+    <pre><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database_name
+    username: your_database_username
+    password: your_database_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+</code></pre>
+
+    <p>Note: Replace <code>your_database_name</code>, <code>your_database_username</code>, and
+        <code>your_database_password</code> with your actual database name, username, and password.</p>
+    <hr>
+    <h1>3. Enable JPA and Specify Entity Scan</h1>
+    <hr>
+    <p>In your main application class, enable JPA and specify the package to scan for entities:</p>
+    <pre><code>package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
+@SpringBootApplication
+@EnableJpaRepositories(basePackages = "com.example.demo.repository")
+public class DemoApplication {
+   public static void main(String[] args) {
+       SpringApplication.run(DemoApplication.class, args);
+   }
+}
+</code></pre>
+    <hr>
+    <h1>4. Create Entity and Repository</h1>
+    <hr>
+    <p>Create a JPA entity representing your database table and a repository interface for database operations:</p>
+
+    <p>Entity:</p>
+    <pre><code>package com.example.demo.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class User {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long id;
+   private String name;
+   private String email;
+
+   // Getters and setters
+}
+</code></pre>
+
+    <p>Repository:</p>
+    <pre><code>package com.example.demo.repository;
+
+import com.example.demo.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
+}
+</code></pre>
+    <hr>
+    <h1>5. Use Repository in Service or Controller</h1>
+    <hr>
+    <p>You can now use the <code>UserRepository</code> in your service or controller to perform database operations:</p>
+
+    <pre><code>package com.example.demo.service;
+
+import com.example.demo.model.User;
+import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+
+   @Autowired
+   private UserRepository userRepository;
+
+   public User getUserById(Long id) {
+       return userRepository.findById(id).orElse(null);
+   }
+}
+</code></pre>
+
+    <p>This is a basic setup for connecting a Spring Boot application to a MySQL database using Spring Data JPA.</p>
+    <h6>created by : Sarthak Ranjan Mishra</h6>
+</body>
+
+</html>

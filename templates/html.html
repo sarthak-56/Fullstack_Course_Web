@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: red; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(250, 136, 136);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    
+<h1>HTML Introduction</h1>
+<p>HTML (<strong>HyperText Markup Language</strong>) is the standard markup language used to create and design documents on the World Wide Web. It provides the structure and content of a web page by using a system of tags and attributes.</p>
+<ul>
+  <li><strong>Tags:</strong> HTML uses tags to define elements within a document. Tags are enclosed in angle brackets &lt;&gt; and typically come in pairs: an opening tag and a closing tag. For example, &lt;p&gt; is the opening tag for a paragraph, and &lt;/p&gt; is the closing tag.</li>
+  <li><strong>Attributes:</strong> Tags can have attributes that provide additional information about the element. Attributes are placed within the opening tag and are usually in the form of name-value pairs. For example, the &lt;a&gt; tag (anchor tag) has an href attribute that specifies the URL of the link.</li>
+  <li><strong>Elements:</strong> Elements are made up of tags, content, and attributes. They define the structure and content of a web page. For example, the &lt;h1&gt; element defines a top-level heading, and the &lt;img&gt; element embeds an image in the page.</li>
+  <li><strong>Document Structure:</strong> A typical HTML document has a structure that includes a &lt;!DOCTYPE html&gt; declaration at the beginning to indicate the document type, followed by an &lt;html&gt; element that contains &lt;head&gt; and &lt;body&gt; sections. The &lt;head&gt; section includes meta-information about the document, such as the page title and links to stylesheets. The &lt;body&gt; section contains the main content of the document.</li>
+  <li><strong>Semantic HTML:</strong> Semantic HTML refers to using HTML elements that convey meaning about the content they contain. For example, using &lt;header&gt; for a page header, &lt;nav&gt; for navigation links, &lt;section&gt; for a section of content, and &lt;footer&gt; for a page footer.</li>
+  <li><strong>HTML5:</strong> HTML5 is the latest version of HTML and introduces new elements, attributes, and features that improve the functionality and accessibility of web pages. It includes elements like &lt;video&gt;, &lt;audio&gt;, &lt;canvas&gt;, and more.</li>
+</ul>
+
+
+<h1>HTML Tags</h1>
+<p>Here's a list of HTML tags along with brief descriptions for each:</p>
+<pre>
+&lt;!DOCTYPE html&gt;  Declares the document type and version of HTML
+
+&lt;html&gt;  Root element of an HTML page
+  &lt;head&gt;  Contains meta-information about the document
+    &lt;title&gt;  Defines the title of the document
+  &lt;/head&gt;
+  &lt;body&gt;  Contains the content of the document
+
+     Text Formatting
+    &lt;h1&gt; to &lt;h6&gt;  Defines HTML headings
+    &lt;p&gt;  Defines a paragraph
+    &lt;br&gt;  Inserts a single line break
+    &lt;hr&gt;  Defines a thematic break (horizontal rule)
+
+     Links and Images
+    &lt;a&gt;  Defines a hyperlink
+    &lt;img&gt;  Defines an image
+    &lt;area&gt;  Defines an area inside an image map
+    &lt;map&gt;  Defines an image map
+
+     Lists
+    &lt;ul&gt;  Defines an unordered list
+    &lt;ol&gt;  Defines an ordered list
+    &lt;li&gt;  Defines a list item
+
+     Tables
+    &lt;table&gt;  Defines a table
+    &lt;tr&gt;  Defines a row in a table
+    &lt;th&gt;  Defines a header cell in a table
+    &lt;td&gt;  Defines a cell in a table
+
+     Forms
+    &lt;form&gt;  Defines an HTML form for user input
+    &lt;input&gt;  Defines an input control
+    &lt;textarea&gt;  Defines a multiline input control (text area)
+    &lt;select&gt;  Defines a dropdown list
+    &lt;option&gt;  Defines an option in a dropdown list
+    &lt;button&gt;  Defines a clickable button
+    &lt;label&gt;  Defines a label for an &lt;input&gt; element
+    &lt;fieldset&gt;  Groups related elements in a form
+    &lt;legend&gt;  Defines a caption for a &lt;fieldset&gt; element
+
+     Semantic Elements
+    &lt;header&gt;  Defines a header for a document or section
+    &lt;nav&gt;  Defines navigation links
+    &lt;section&gt;  Defines a section in a document
+    &lt;article&gt;  Defines an independent, self-contained article
+    &lt;aside&gt;  Defines content aside from the content (like a sidebar)
+    &lt;footer&gt;  Defines a footer for a document or section
+
+    <!-- Miscellaneous -->
+    &lt;iframe&gt;  Defines an inline frame
+    &lt;embed&gt;  Defines a container for an external application or interactive content
+    &lt;object&gt;  Defines an embedded object within an HTML document 
+    &lt;video&gt;  Defines a video or movie 
+    &lt;audio&gt;  Defines sound content 
+    &lt;canvas&gt; Used to draw graphics, on the fly, via scripting 
+    &lt;svg&gt;  Defines vector-based graphics in XML format 
+    &lt;math&gt;  Defines a mathematical equation 
+
+     Meta Tags
+    &lt;meta&gt;  Defines metadata about an HTML document 
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+
+<h1>HTML Link</h1>
+<p>In HTML, a link is created using the <code>&lt;a&gt;</code> (anchor) tag. The <code>&lt;a&gt;</code> tag is used to define a hyperlink, which is a clickable text or image that redirects the user to another location.</p>
+<pre>
+  &lt;a href="https://www.example.com"&gt;Click here to visit Example.com&lt;/a&gt;
+</pre>
+
+
+<h1>CSS Link</h1>
+<p>In HTML, you can link an external CSS stylesheet to style your web page using the <code>&lt;link&gt;</code> tag. Here's an example:</p>
+<pre>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My CSS Example&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, CSS!&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph styled with CSS.&lt;/p&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+
+
+
+<h1>HTML Tags Example</h1>
+<p>Practical example of using various HTML tags in a simple webpage:</p>
+<pre>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML Tags Example&lt;/title&gt;
+    &lt;style&gt;
+      body &#123;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+      &#125;
+      h1 &#123;
+        color: #333;
+      &#125;
+      p &#123;
+        color: #666;
+      &#125;
+      ul &#123;
+        color: #999;
+      &#125;
+      .important &#123;
+        font-weight: bold;
+        color: #f00;
+      &#125;
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+    &lt;p class="important"&gt;This is an important paragraph.&lt;/p&gt;
+    
+    &lt;h2&gt;Lists&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Item 1&lt;/li&gt;
+      &lt;li&gt;Item 2&lt;/li&gt;
+      &lt;li&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    
+    &lt;h2&gt;Links&lt;/h2&gt;
+    &lt;p&gt;Visit our &lt;a href="https://www.example.com"&gt;website&lt;/a&gt;.&lt;/p&gt;
+    
+    &lt;h2&gt;Images&lt;/h2&gt;
+    &lt;img src="https://via.placeholder.com/150" alt="Placeholder Image"&gt;
+    
+    &lt;h2&gt;Tables&lt;/h2&gt;
+    &lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Jane&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+
+
+<h1>Navbar Example</h1>
+<p>Here's a basic example of a navbar in HTML:</p>
+<pre>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Navbar Example&lt;/title&gt;
+    &lt;style&gt;
+      body &#123;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      &#125;
+      .navbar &#123;
+        background-color: #333;
+        overflow: hidden;
+      &#125;
+      .navbar a &#123;
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      &#125;
+      .navbar a:hover &#123;
+        background-color: #ddd;
+        color: black;
+      &#125;
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;div class="navbar"&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#about"&gt;About&lt;/a&gt;
+    &lt;a href="#services"&gt;Services&lt;/a&gt;
+    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div style="padding:20px"&gt;
+    &lt;h2&gt;Navbar Example&lt;/h2&gt;
+    &lt;p&gt;A basic example of a navbar in HTML.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+
+</body>
+</html>

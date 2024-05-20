@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: red; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(250, 136, 136);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: red; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+    
+<h1>Introduction to Next.js</h1>
+<p>Next.js is a React framework that provides a way to build server-side rendered (SSR) React applications with ease. It is designed to make building React applications more efficient by providing built-in features and conventions for handling routing, server-side rendering, and other common tasks.</p>
+<p>Here are some key features of Next.js:</p>
+<ul>
+  <li><strong>Server-side rendering (SSR):</strong> Next.js allows you to render React components on the server side, which can improve performance and SEO by serving fully rendered pages to the client.</li>
+  <li><strong>Static site generation (SSG):</strong> Next.js supports static site generation, where pages are pre-rendered at build time. This can further improve performance and reduce the need for server-side rendering.</li>
+  <li><strong>File-based routing:</strong> Next.js uses a file-based routing system, where the file structure of your pages determines the URL structure of your application.</li>
+  <li><strong>API routes:</strong> Next.js allows you to create API routes alongside your pages, making it easy to create backend functionality using Node.js.</li>
+  <li><strong>Automatic code splitting:</strong> Next.js automatically splits your code into smaller bundles, which are loaded only when needed, improving page load times.</li>
+  <li><strong>CSS and Sass support:</strong> Next.js provides built-in support for CSS and Sass, allowing you to easily style your components.</li>
+  <li><strong>Image optimization:</strong> Next.js optimizes images automatically, reducing their size and improving loading times.</li>
+  <li><strong>TypeScript support:</strong> Next.js has built-in support for TypeScript, allowing you to write type-safe React components.</li>
+</ul>
+<p>Next.js is widely used for building React applications, especially for projects that require server-side rendering or static site generation. Its developer-friendly features and performance optimizations make it a popular choice for building modern web applications.</p>
+
+<h1>Routing in Next.js</h1>
+<p>In Next.js, routing is based on the file system. Each JavaScript file in the <code>pages</code> directory corresponds to a route in your application. Here's a basic overview of how routing works in Next.js:</p>
+<pre>
+1. File-based routing: Next.js uses a file-based routing system, where the file structure of your pages directory determines the URL structure of your application. For example, a file named about.js in the pages directory would be accessible at /about.
+
+2. Nested routes: You can create nested routes by creating subdirectories within the pages directory. For example, a file named pages/posts/[slug].js would match the route /posts/:slug, where :slug is a dynamic parameter.
+
+3. Link component: Next.js provides a Link component from the next/link module that allows you to create client-side navigations between pages without a full page reload. Here's an example:
+
+   import Link from 'next/link';
+
+   const Home = () => (
+     &lt;div>
+       &lt;h1>Home Page&lt;/h1>
+       &lt;Link href="/about">
+         &lt;a>About&lt;/a>
+       &lt;/Link>
+     &lt;/div>
+   );
+
+   export default Home;
+
+4. Programmatic navigation: Next.js provides a useRouter hook from the next/router module that allows you to perform client-side navigation programmatically. Here's an example:
+
+   import &#123; useRouter &#125; from 'next/router';
+
+   const Home = () => {
+     const router = useRouter();
+
+     const handleClick = () => {
+       router.push('/about');
+     };
+
+     return (
+       &lt;div>
+         &lt;h1>Home Page&lt;/h1>
+         &lt;button onClick={handleClick}>Go to About&lt;/button>
+       &lt;/div>
+     );
+   };
+
+   export default Home;
+
+5. Dynamic routes: Next.js allows you to create dynamic routes by using brackets in the file name (e.g., pages/posts/[id].js). The value of the dynamic parameter can be accessed using the useRouter hook or getServerSideProps/getStaticProps functions.
+
+Next.js provides a flexible and intuitive routing system that makes it easy to create complex routing structures in your application.
+</pre>
+
+<h1>Benefits of Next.js</h1>
+<ul>
+  <li><strong>Ease of Use:</strong> Next.js simplifies the setup and configuration of a React application by providing a pre-configured environment.</li>
+  <li><strong>Server-side Rendering (SSR):</strong> Next.js allows you to render React components on the server side, improving performance and SEO.</li>
+  <li><strong>Static Site Generation (SSG):</strong> Next.js supports static site generation, which can significantly improve performance.</li>
+  <li><strong>Incremental Static Regeneration (ISR):</strong> Next.js allows you to update static content without rebuilding the entire site.</li>
+  <li><strong>File-based Routing:</strong> Next.js uses a file-based routing system, simplifying route management.</li>
+  <li><strong>Built-in API Routes:</strong> Next.js allows you to create API routes alongside your pages, simplifying backend development.</li>
+  <li><strong>TypeScript Support:</strong> Next.js has built-in support for TypeScript, improving code quality.</li>
+  <li><strong>Automatic Code Splitting:</strong> Next.js automatically splits your code into smaller bundles, improving page load times.</li>
+  <li><strong>Fast Refresh:</strong> Next.js provides a fast refresh feature for instant code updates during development.</li>
+  <li><strong>Community and Ecosystem:</strong> Next.js has a large and active community, with many third-party plugins and libraries available.</li>
+</ul>
+
+
+<h1>Image Optimization in Next.js</h1>
+<p>In Next.js, image optimization is a built-in feature that automatically optimizes images for performance. When you use the <code>next/image</code> component to display images in your application, Next.js optimizes those images based on the device size and screen resolution, serving the most appropriate image size for the best performance.</p>
+<pre>
+1. Using the next/image component: To take advantage of image optimization, you should use the next/image component to display images in your Next.js application. This component provides several benefits, including automatic image optimization, lazy loading, and support for the srcset attribute for responsive images.
+
+2. Automatic image resizing: Next.js automatically resizes images to the specified dimensions using the width and height props of the next/image component. This helps reduce the file size of images, improving page load times.
+
+3. Device-aware optimization: Next.js optimizes images based on the device size and screen resolution. This ensures that users on different devices receive the most appropriate image size for their screen, further improving performance.
+
+4. WebP format support: Next.js automatically converts images to the WebP format when supported by the browser. WebP images are typically smaller in size than other formats, leading to faster loading times.
+
+5. Blur-up effect: Next.js provides a blur-up effect for images, where a low-quality, blurred image is displayed as a placeholder while the full-quality image is loading. This can improve the perceived loading time of images.
+
+6. Automatic image optimization with the optimizeImages flag: Next.js provides an optimizeImages flag in the next.config.js file that enables automatic image optimization for all images in your application. This flag is set to true by default.
+</pre>
+
+
+<h1>Image Optimization in Next.js</h1>
+<p>In Next.js, image optimization is a built-in feature that automatically optimizes images for performance. When you use the <code>next/image</code> component to display images in your application, Next.js optimizes those images based on the device size and screen resolution, serving the most appropriate image size for the best performance.</p>
+<ul>
+  <li>Using the next/image component: To take advantage of image optimization, you should use the next/image component to display images in your Next.js application. This component provides several benefits, including automatic image optimization, lazy loading, and support for the srcset attribute for responsive images.</li>
+  <li>Automatic image resizing: Next.js automatically resizes images to the specified dimensions using the width and height props of the next/image component. This helps reduce the file size of images, improving page load times.</li>
+  <li>Device-aware optimization: Next.js optimizes images based on the device size and screen resolution. This ensures that users on different devices receive the most appropriate image size for their screen, further improving performance.</li>
+  <li>WebP format support: Next.js automatically converts images to the WebP format when supported by the browser. WebP images are typically smaller in size than other formats, leading to faster loading times.</li>
+  <li>Blur-up effect: Next.js provides a blur-up effect for images, where a low-quality, blurred image is displayed as a placeholder while the full-quality image is loading. This can improve the perceived loading time of images.</li>
+  <li>Automatic image optimization with the optimizeImages flag: Next.js provides an optimizeImages flag in the next.config.js file that enables automatic image optimization for all images in your application. This flag is set to true by default.</li>
+</ul>
+
+
+<h1>Next.js Parallel Routing</h1>
+<p>Next.js does not natively support parallel routing, as routing in Next.js is based on the file system and follows a predefined structure. Each route is mapped to a specific file in the <code>pages</code> directory, and routes are not executed in parallel.</p>
+<ul>
+  <li>However, you can achieve parallel routing in Next.js by using client-side routing libraries like React Router or Reach Router. These libraries allow you to define routes in a more dynamic way and handle routing logic on the client side, enabling parallel routing behavior.</li>
+  <li>Install React Router:
+    <pre>npm install react-router-dom</pre>
+  </li>
+  <li>Create a custom <code>_app.js</code> file in your <code>pages</code> directory to wrap your application with the <code>BrowserRouter</code> component from React Router:</li>
+  <li>Define your routes using React Router's <code>Route</code> component:</li>
+</ul>
+
+
+<h1>Next.js Installation</h1>
+<p>To install Next.js in your project, you can use npm or yarn. Here's how you can do it using npm:</p>
+<pre>
+1. Create a new directory for your Next.js project:
+
+   mkdir my-nextjs-app
+
+2. Navigate into the newly created directory:
+
+   cd my-nextjs-app
+
+3. Initialize a new npm project (if you haven't already):
+
+   npm init -y
+
+4. Install Next.js and React:
+
+   npm install next react react-dom
+
+5. Optionally, you can also install TypeScript if you plan to use it in your project:
+
+   npm install typescript @types/react @types/node
+
+6. Add scripts to your package.json file to run Next.js commands:
+
+   "scripts": &#123;
+     "dev": "next dev",
+     "build": "next build",
+     "start": "next start"
+   &#125;
+
+7. Create a new file named pages/index.js with the following content to create a simple Next.js page:
+
+   function Home() &#123;
+     return &lt;div&gt;Welcome to Next.js!&lt;/div&gt;;
+   &#125;
+
+   export default Home;
+
+8. Run the development server:
+
+   npm run dev
+
+9. Open your browser and navigate to http://localhost:3000 to see your Next.js application running.
+</pre>
+
+
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB</title>
+    <style>
+      /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2vw;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: purple; 
+    font-size: 2vw;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(242, 143, 242);
+}
+
+/* Paragraph Styles */
+p {
+    color: rgba(51, 51, 51, 1); /* Dark grey color */
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Code and Pre Styles */
+pre, code {
+    background-color:rgb(209, 198, 198);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
+/* HR Styles */
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(221, 221, 221, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+a {
+    color: rgba(0, 123, 255, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: right;
+    margin-top: 50px;
+    color: rgba(102, 102, 102, 1); /* Grey color */
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        color: purple; 
+        font-size: 5vw;
+    }
+    
+}
+    </style>
+</head>
+<body>
+
+<h1>MongoDB Introduction</h1>
+<p>MongoDB is a popular open-source, document-oriented NoSQL database that provides high performance, high availability, and easy scalability.</p>
+<ul>
+  <li><strong>Document-Oriented:</strong> MongoDB stores data in flexible, JSON-like documents called BSON (Binary JSON).</li>
+  <li><strong>Schemaless:</strong> MongoDB is schemaless, allowing you to store different types of documents in the same collection without a predefined schema.</li>
+  <li><strong>High Performance:</strong> MongoDB uses a memory-mapped storage engine for fast read and write operations. It also supports sharding and replication for scalability and availability.</li>
+  <li><strong>Query Language:</strong> MongoDB uses a rich query language with operators and expressions for complex queries.</li>
+  <li><strong>Indexes:</strong> MongoDB supports indexes on any field in a document for quick data access.</li>
+  <li><strong>Aggregation Framework:</strong> MongoDB includes a powerful aggregation framework for complex data aggregation operations.</li>
+  <li><strong>Client Libraries:</strong> MongoDB provides official and community-supported client libraries for easy integration with various programming languages.</li>
+</ul>
+
+<h1>MongoDB Installation</h1>
+<p><strong> Download Redis:</strong> Visit the <a href="https://www.mongodb.com/try/download/community" target="_blank" rel="noopener noreferrer">Redis download page</a> and download the latest stable release of Redis.</p>
+<p><strong>1. Import the Public Key:</strong> Import the MongoDB public GPG key using the following command:</p>
+
+<pre><code>wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+</code></pre>
+
+<p><strong>2. Create a MongoDB List File:</strong> Create the list file for MongoDB in the sources directory:</p>
+
+<pre><code>echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+</code></pre>
+
+<p><strong>3. Reload Local Package Database:</strong> Reload the local package database to ensure the package list is up to date:</p>
+
+<pre><code>sudo apt update
+</code></pre>
+
+<p><strong>4. Install MongoDB:</strong> Install the MongoDB package using the following command:</p>
+
+<pre><code>sudo apt install -y mongodb-org
+</code></pre>
+
+<p><strong>5. Start MongoDB:</strong> Start the MongoDB service using the following command:</p>
+
+<pre><code>sudo systemctl start mongod
+</code></pre>
+
+<p><strong>6. Verify MongoDB Installation:</strong> Check the status of the MongoDB service to ensure it's running:</p>
+
+<pre><code>sudo systemctl status mongod
+</code></pre>
+
+<p><strong>7. Access MongoDB:</strong> You can access the MongoDB shell using the following command:</p>
+
+<pre><code>mongo
+</code></pre>
+
+<p>You should now be connected to the MongoDB shell, where you can start interacting with the database.</p>
+
+<p><strong>8. Additional Configuration (Optional):</strong> You may need to configure MongoDB to start automatically on system boot, adjust server settings in the MongoDB configuration file (e.g., mongod.conf), and create additional MongoDB users and databases as needed.</p>
+
+<p>That's it! You now have MongoDB installed and running on your system.</p>
+<p>Overall, MongoDB is a versatile and scalable database suitable for a wide range of applications, from small single-server setups to large distributed systems.</p>
+
+
+<h1>MongoDB Query Operations</h1>
+<p>MongoDB provides a rich set of queries to manipulate and retrieve data from the database. Here are some common query operations:</p>
+<pre>
+1. Insert Documents:
+   db.collection('myCollection').insertOne({ name: 'John', age: 30 });
+
+2. Find Documents:
+   db.collection('myCollection').find({ age: { $gt: 25 } });
+
+3. Update Documents:
+   db.collection('myCollection').updateOne({ name: 'John' }, { $set: { age: 31 } });
+
+4. Delete Documents:
+   db.collection('myCollection').deleteOne({ name: 'John' });
+
+5. Aggregation:
+   db.collection('myCollection').aggregate([
+     { $group: { _id: '$name', totalAge: { $sum: '$age' } } }
+   ]);
+
+6. Indexing:
+   db.collection('myCollection').createIndex({ age: 1 });
+
+7. Text Search:
+   db.collection('myCollection').find({ $text: { $search: 'search term' } });
+
+8. Transactions:
+   session.startTransaction();
+   try {
+     // Perform multiple operations
+     session.commitTransaction();
+   } catch (error) {
+     session.abortTransaction();
+     throw error;
+   }
+</pre>
+<p>These are just a few examples of the queries and operations you can perform in MongoDB. The MongoDB documentation provides comprehensive information on all available query operations and their usage.</p>
+
+
+<h1>MongoDB Collection Operations</h1>
+<p>In MongoDB, data is stored in collections, which are analogous to tables in relational databases. Here's how you can create, update, and delete documents (rows) in a MongoDB collection:</p>
+<pre>
+1. Create Collection (Table):
+   You don't need to explicitly create collections in MongoDB. When you insert a document into a collection, MongoDB creates the collection if it doesn't already exist.
+
+2. Insert Documents (Rows):
+   To insert documents into a collection, you can use the <strong>insertOne</strong> or <strong>insertMany</strong> methods:
+   <strong>db.myCollection.insertOne({ name: 'John', age: 30 });</strong>
+
+3. Update Documents:
+   To update documents in a collection, you can use the <strong>updateOne</strong> or <strong>updateMany</strong> methods. The following example updates a document with the name 'John':
+   <strong>db.myCollection.updateOne({ name: 'John' }, { $set: { age: 31 } });</strong>
+
+4. Delete Documents:
+   To delete documents from a collection, you can use the <strong>deleteOne</strong> or <strong>deleteMany</strong> methods. The following example deletes a document with the name 'John':
+   <strong>db.myCollection.deleteOne({ name: 'John' });</strong>
+
+Remember, in MongoDB, collections and documents are created implicitly when data is inserted, so you typically don't need to explicitly create or delete collections. However, you can explicitly drop a collection if needed:
+<strong>db.myCollection.drop();</strong>
+
+Also, it's important to note that MongoDB is schemaless, so each document in a collection can have a different structure.
+</pre>
+
+
+<h1>MongoDB Database Configuration</h1>
+<p>
+1. Connection String:
+   You can specify the host, port, and other options in the connection string when connecting to MongoDB using the <strong>mongodb://</strong> protocol. Here's an example connection string:
+   <strong>mongodb://localhost:27017/mydatabase</strong>
+   In this example, <strong>localhost</strong> is the host, <strong>27017</strong> is the port, and <strong>mydatabase</strong> is the name of the database.
+
+2. Configuration File:
+   You can specify these options in the MongoDB configuration file (<strong>mongod.conf</strong>). Here's an example configuration file specifying the host and port:
+   <strong># mongod.conf
+   net:
+     bindIp: 127.0.0.1  # Specify the IP address of the host
+     port: 27017         # Specify the port number</strong>
+   You can set other options in the configuration file as well, such as authentication options, replication settings, etc.
+
+3. Command Line Options:
+   When starting the <strong>mongod</strong> process from the command line, you can specify the host and port using command line options:
+   <strong>mongod --bind_ip 127.0.0.1 --port 27017</strong>
+   This will start the <strong>mongod</strong> process and bind it to the specified host and port.
+</p>
+
+
+<h1>MongoDB Query Operators</h1>
+<ul>
+  <li><strong>Comparison Operators:</strong>
+    <ul>
+      <li><strong>$eq</strong>: Matches values that are equal to a specified value.</li>
+      <li><strong>$gt</strong>: Matches values that are greater than a specified value.</li>
+      <li><strong>$gte</strong>: Matches values that are greater than or equal to a specified value.</li>
+      <li><strong>$lt</strong>: Matches values that are less than a specified value.</li>
+      <li><strong>$lte</strong>: Matches values that are less than or equal to a specified value.</li>
+      <li><strong>$ne</strong>: Matches all values that are not equal to a specified value.</li>
+      <li><strong>$in</strong>: Matches any of the values specified in an array.</li>
+      <li><strong>$nin</strong>: Matches none of the values specified in an array.</li>
+    </ul>
+  </li>
+  <li><strong>Logical Operators:</strong>
+    <ul>
+      <li><strong>$and</strong>: Joins query clauses with a logical AND.</li>
+      <li><strong>$or</strong>: Joins query clauses with a logical OR.</li>
+      <li><strong>$not</strong>: Inverts the effect of a query expression.</li>
+      <li><strong>$nor</strong>: Joins query clauses with a logical NOR.</li>
+    </ul>
+  </li>
+  <li><strong>Element Operators:</strong>
+    <ul>
+      <li><strong>$exists</strong>: Matches documents that have the specified field.</li>
+      <li><strong>$type</strong>: Selects documents if a field is of the specified type.</li>
+    </ul>
+  </li>
+  <!-- Add more operators as needed -->
+</ul>
+
+
+<h1>MongoDB Data API</h1>
+<p>
+  MongoDB provides a powerful and flexible query language for interacting with its databases. To interact with MongoDB data through an API, you typically use a driver or library that provides a programming interface for your language of choice.
+</p>
+<pre>
+1. Install the MongoDB Node.js driver:
+
+   npm install mongodb
+
+2. Create a Node.js server:
+
+   const express = require('express');
+   const { MongoClient } = require('mongodb');
+
+   const app = express();
+   const port = 3000;
+
+   app.get('/api/data', async (req, res) => {
+     const client = new MongoClient('mongodb://localhost:27017', { useUnifiedTopology: true });
+
+     try {
+       await client.connect();
+       const database = client.db('mydatabase');
+       const collection = database.collection('mycollection');
+       const data = await collection.find({}).toArray();
+       res.json(data);
+     } catch (error) {
+       console.error(error);
+       res.status(500).json({ message: 'Internal Server Error' });
+     } finally {
+       await client.close();
+     }
+   });
+
+   app.listen(port, () => {
+     console.log(`Server running at http://localhost:${port}`);
+   });
+
+3. Access the API endpoint:
+   You can access the API endpoint http://localhost:3000/api/data to retrieve data from your MongoDB database.
+</pre>
+
+
+<h1>MongoDB Document Validation</h1>
+<p>
+  MongoDB supports document validation, which allows you to enforce a schema on the collection level. This feature ensures that all documents inserted or updated in a collection meet certain criteria, such as field presence, data type, or value range.
+</p>
+<pre>
+// Define Validation Rules
+db.createCollection("myCollection", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "age"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "must be a string"
+        },
+        age: {
+          bsonType: "number",
+          minimum: 0,
+          description: "must be a number and is required"
+        }
+      }
+    }
+  }
+});
+
+// Enable Validation
+db.runCommand({
+  collMod: "myCollection",
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "age"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "must be a string"
+        },
+        age: {
+          bsonType: "number",
+          minimum: 0,
+          description: "must be a number and is required"
+        }
+      }
+    }
+  },
+  validationAction: "error", // Action to take on validation failure (error, warn, or off)
+  validationLevel: "strict"  // Validation level (strict, moderate, or off)
+});
+</pre>
+
+Certainly! Here's the MongoDB exercise using `<strong>`, `<li>`, and `<p>` tags for emphasis, list items, and paragraphs, respectively:
+
+  ```html
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>MongoDB Exercise</title>
+  </head>
+  <body>
+      <h1>MongoDB Exercise</h1>
+      <p>Below is a simple exercise to get you started with MongoDB. We will create a database for a blog application with two collections: one for blog posts and another for comments on those posts.</p>
+  
+      <h1>1. Create a Database</h1>
+      <p><strong>Command:</strong></p>
+      <pre>use blog</pre>
+  
+      <h1>2. Create Collections</h1>
+      <p><strong>Commands:</strong></p>
+      <pre>
+  db.createCollection('posts')
+  db.createCollection('comments')
+      </pre>
+  
+      <h1>3. Insert Documents</h1>
+      <p><strong>Commands:</strong></p>
+      <pre>
+  // Insert blog posts
+  db.posts.insertMany([
+    { title: 'First Post', content: 'This is my first blog post.' },
+    { title: 'Second Post', content: 'This is my second blog post.' },
+    { title: 'Third Post', content: 'This is my third blog post.' }
+  ])
+  
+  // Insert comments
+  db.comments.insertMany([
+    { postId: ObjectId("post_id_here"), text: 'Great post!' },
+    { postId: ObjectId("post_id_here"), text: 'Thanks for sharing.' },
+    { postId: ObjectId("post_id_here"), text: 'Looking forward to more posts.' }
+  ])
+      </pre>
+  
+      <h1>4. Query Documents</h1>
+      <p><strong>Commands:</strong></p>
+      <pre>
+  // Find all blog posts
+  db.posts.find()
+  
+  // Find all comments for a specific post
+  db.comments.find({ postId: ObjectId("post_id_here") })
+      </pre>
+  
+      <h1>5. Update Documents</h1>
+      <p><strong>Commands:</strong></p>
+      <pre>
+  // Update a blog post
+  db.posts.updateOne(
+    { _id: ObjectId("post_id_here") },
+    { $set: { title: 'Updated Post Title' } }
+  )
+  
+  // Update a comment
+  db.comments.updateOne(
+    { _id: ObjectId("comment_id_here") },
+    { $set: { text: 'Updated comment text' } }
+  )
+      </pre>
+  
+      <h1>6. Delete Documents</h1>
+      <p><strong>Commands:</strong></p>
+      <pre>
+  // Delete a blog post
+  db.posts.deleteOne({ _id: ObjectId("post_id_here") })
+  
+  // Delete a comment
+  db.comments.deleteOne({ _id: ObjectId("comment_id_here") })
+      </pre>
+  </body>
+  </html>
+
+</body>
+</html>
